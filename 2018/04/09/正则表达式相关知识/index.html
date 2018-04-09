@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>windows-shell | 一只小妖</title>
+  <title>正则表达式相关知识 | 一只小妖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用windows命令行笔记进入命令行界面直接在任务栏的搜索框输入cmd回车 进入某个磁盘在出现的命令行中箭头后直接输入要进入的盘符并加上:然后回车。 1C:\Users\Administrator&amp;gt;F：">
-<meta name="keywords" content="windows-shell">
+  <meta name="description" content="正则表达式具有特殊含义的标点符号 ^ $ . * + ? = ! : | \ / ( ) [ ] { }想直接使用上面这些标点符号直接量，则必须使用前缀 \ 。  正则表达式的字符类   字符 匹配     [...] 方括号内的任意字符   [^...] 不在方括号内的任意字符   . 除换行符和其他Unicode行终止符之外的任意字符   \w 任何ASCⅡ字符组成的单词，等价于[a-zA-Z">
+<meta name="keywords" content="正则">
 <meta property="og:type" content="article">
-<meta property="og:title" content="windows-shell">
-<meta property="og:url" content="http://yoursite.com/2017/12/20/windows-shell/index.html">
+<meta property="og:title" content="正则表达式相关知识">
+<meta property="og:url" content="http://yoursite.com/2018/04/09/正则表达式相关知识/index.html">
 <meta property="og:site_name" content="一只小妖">
-<meta property="og:description" content="使用windows命令行笔记进入命令行界面直接在任务栏的搜索框输入cmd回车 进入某个磁盘在出现的命令行中箭头后直接输入要进入的盘符并加上:然后回车。 1C:\Users\Administrator&amp;gt;F：">
+<meta property="og:description" content="正则表达式具有特殊含义的标点符号 ^ $ . * + ? = ! : | \ / ( ) [ ] { }想直接使用上面这些标点符号直接量，则必须使用前缀 \ 。  正则表达式的字符类   字符 匹配     [...] 方括号内的任意字符   [^...] 不在方括号内的任意字符   . 除换行符和其他Unicode行终止符之外的任意字符   \w 任何ASCⅡ字符组成的单词，等价于[a-zA-Z">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-12-21T12:24:48.484Z">
+<meta property="og:updated_time" content="2018-04-09T02:19:31.043Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="windows-shell">
-<meta name="twitter:description" content="使用windows命令行笔记进入命令行界面直接在任务栏的搜索框输入cmd回车 进入某个磁盘在出现的命令行中箭头后直接输入要进入的盘符并加上:然后回车。 1C:\Users\Administrator&amp;gt;F：">
+<meta name="twitter:title" content="正则表达式相关知识">
+<meta name="twitter:description" content="正则表达式具有特殊含义的标点符号 ^ $ . * + ? = ! : | \ / ( ) [ ] { }想直接使用上面这些标点符号直接量，则必须使用前缀 \ 。  正则表达式的字符类   字符 匹配     [...] 方括号内的任意字符   [^...] 不在方括号内的任意字符   . 除换行符和其他Unicode行终止符之外的任意字符   \w 任何ASCⅡ字符组成的单词，等价于[a-zA-Z">
   
     <link rel="alternative" href="/atom.xml" title="一只小妖" type="application/atom+xml">
   
@@ -161,35 +161,179 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-windows-shell" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-正则表达式相关知识" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      windows-shell
+      正则表达式相关知识
     </h1>
   
 
         
-        <a href="/2017/12/20/windows-shell/" class="archive-article-date">
-  	<time datetime="2017-12-20T01:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-20</time>
+        <a href="/2018/04/09/正则表达式相关知识/" class="archive-article-date">
+  	<time datetime="2018-04-09T02:09:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="使用windows命令行笔记"><a href="#使用windows命令行笔记" class="headerlink" title="使用windows命令行笔记"></a>使用windows命令行笔记</h2><h3 id="进入命令行界面"><a href="#进入命令行界面" class="headerlink" title="进入命令行界面"></a>进入命令行界面</h3><p>直接在任务栏的搜索框输入<code>cmd</code>回车</p>
-<h3 id="进入某个磁盘"><a href="#进入某个磁盘" class="headerlink" title="进入某个磁盘"></a>进入某个磁盘</h3><p>在出现的命令行中箭头后直接输入要进入的盘符并加上<code>:</code>然后回车。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator&gt;F：</span><br></pre></td></tr></table></figure>
+        <h3 id="正则表达式具有特殊含义的标点符号"><a href="#正则表达式具有特殊含义的标点符号" class="headerlink" title="正则表达式具有特殊含义的标点符号"></a>正则表达式具有特殊含义的标点符号</h3><blockquote>
+<p>^ $ . * + ? = ! : | \ / ( ) [ ] { }<br>想直接使用上面这些标点符号直接量，则必须使用前缀 \ 。</p>
+</blockquote>
+<h3 id="正则表达式的字符类"><a href="#正则表达式的字符类" class="headerlink" title="正则表达式的字符类"></a>正则表达式的字符类</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">匹配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>[...]</code></td>
+<td style="text-align:center">方括号内的任意字符</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>[^...]</code></td>
+<td style="text-align:center">不在方括号内的任意字符</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>.</code></td>
+<td style="text-align:center">除换行符和其他Unicode行终止符之外的任意字符</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\w</code></td>
+<td style="text-align:center">任何ASCⅡ字符组成的单词，等价于[a-zA-Z0-9]</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\W</code></td>
+<td style="text-align:center">任何不是ASCⅡ字符组成的单词，等价于[^a-zA-Z0-9]</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\s</code></td>
+<td style="text-align:center">任何Unicode空白符</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\S</code></td>
+<td style="text-align:center">任何非Unicode空白符的字符，注意\w和\S不同</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\d</code></td>
+<td style="text-align:center">任何ASCⅡ数字，等价于[0-9]</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\D</code></td>
+<td style="text-align:center">除了ASCⅡ数字之外的任何字符，等价于[^0-9]</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\b</code></td>
+<td style="text-align:center">退格直接量</td>
+</tr>
+</tbody>
+</table>
 <a id="more"></a>
-<h3 id="展示某个空间下的所有文件列表-使用命令dir"><a href="#展示某个空间下的所有文件列表-使用命令dir" class="headerlink" title="展示某个空间下的所有文件列表:使用命令dir"></a>展示某个空间下的所有文件列表:使用命令<code>dir</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">F:\WebDev\react&gt;dir</span><br><span class="line"> 驱动器 F 中的卷是 移动硬盘</span><br><span class="line"> 卷的序列号是 1AEA-6007</span><br><span class="line"></span><br><span class="line"> F:\WebDev\react 的目录</span><br><span class="line"></span><br><span class="line">2017/12/14  16:19    &lt;DIR&gt;          .</span><br><span class="line">2017/12/14  16:19    &lt;DIR&gt;          ..</span><br><span class="line">2017/08/24  16:12    &lt;DIR&gt;          .vscode</span><br><span class="line">2017/12/19  16:03    &lt;DIR&gt;          LearnReact</span><br><span class="line">2017/09/12  08:57    &lt;DIR&gt;          LoginIdentity</span><br><span class="line">2017/08/20  20:33    &lt;DIR&gt;          my-app</span><br><span class="line">2017/08/25  10:51    &lt;DIR&gt;          newapp</span><br><span class="line">2017/07/19  16:27    &lt;DIR&gt;          react-ele-webapp</span><br><span class="line">2017/08/06  20:11    &lt;DIR&gt;          react-redux-universal-hot-example</span><br><span class="line">2017/12/13  14:10    &lt;DIR&gt;          reactDemo</span><br><span class="line">2017/08/05  12:51    &lt;DIR&gt;          reactFetch</span><br><span class="line">2017/10/09  11:23    &lt;DIR&gt;          SAC.WEB</span><br><span class="line">2017/08/24  20:11    &lt;DIR&gt;          ts-import-plugin-example</span><br><span class="line">2017/07/31  15:32    &lt;DIR&gt;          typescript-react-demo</span><br><span class="line">2017/09/06  22:58    &lt;DIR&gt;          Videos</span><br><span class="line">2017/09/11  22:28    &lt;DIR&gt;          WEB</span><br><span class="line">2017/09/26  14:26    &lt;DIR&gt;          WEBTEST</span><br><span class="line">2017/12/14  16:24               235 文件夹说明.txt</span><br><span class="line">               1 个文件            235 字节</span><br><span class="line">              17 个目录 842,762,387,456 可用字节</span><br><span class="line"></span><br><span class="line">F:\WebDev\react&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="进入某个文件夹使用命令cd加空格加想进入的文件夹名称（可配合tab）-然后回车。"><a href="#进入某个文件夹使用命令cd加空格加想进入的文件夹名称（可配合tab）-然后回车。" class="headerlink" title="进入某个文件夹使用命令cd加空格加想进入的文件夹名称（可配合tab）,然后回车。"></a>进入某个文件夹使用命令<code>cd</code>加空格加想进入的文件夹名称（可配合<code>tab</code>）,然后回车。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">F:\WebDev&gt;<span class="built_in">cd</span> react</span><br><span class="line"></span><br><span class="line">F:\WebDev\react&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="返回上一层目录使用命令cd"><a href="#返回上一层目录使用命令cd" class="headerlink" title="返回上一层目录使用命令cd.."></a>返回上一层目录使用命令<code>cd..</code></h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">F:\WebDev&gt;<span class="built_in">cd</span> react</span><br><span class="line"></span><br><span class="line">F:\WebDev\react&gt;<span class="built_in">cd</span>..</span><br><span class="line"></span><br><span class="line">F:\WebDev&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="创建文件夹-使用mkdir加上文件夹名"><a href="#创建文件夹-使用mkdir加上文件夹名" class="headerlink" title="创建文件夹 使用mkdir加上文件夹名"></a>创建文件夹 使用<code>mkdir</code>加上文件夹名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">F:\WebDev\react\LearnReact&gt;dir</span><br><span class="line"> 驱动器 F 中的卷是 移动硬盘</span><br><span class="line"> 卷的序列号是 1AEA-6007</span><br><span class="line"></span><br><span class="line"> F:\WebDev\react\LearnReact 的目录</span><br><span class="line"></span><br><span class="line">2017/12/19  16:03    &lt;DIR&gt;          .</span><br><span class="line">2017/12/19  16:03    &lt;DIR&gt;          ..</span><br><span class="line">2017/07/30  23:36    &lt;DIR&gt;          react</span><br><span class="line">2017/12/19  16:04    &lt;DIR&gt;          react-router-v4</span><br><span class="line">               0 个文件              0 字节</span><br><span class="line">               4 个目录 842,762,387,456 可用字节</span><br><span class="line"></span><br><span class="line">F:\WebDev\react\LearnReact&gt;mkdir my-app</span><br><span class="line"></span><br><span class="line">F:\WebDev\react\LearnReact&gt;dir</span><br><span class="line"> 驱动器 F 中的卷是 移动硬盘</span><br><span class="line"> 卷的序列号是 1AEA-6007</span><br><span class="line"></span><br><span class="line"> F:\WebDev\react\LearnReact 的目录</span><br><span class="line"></span><br><span class="line">2017/12/19  16:23    &lt;DIR&gt;          .</span><br><span class="line">2017/12/19  16:23    &lt;DIR&gt;          ..</span><br><span class="line">2017/12/19  16:23    &lt;DIR&gt;          my-app</span><br><span class="line">2017/07/30  23:36    &lt;DIR&gt;          react</span><br><span class="line">2017/12/19  16:04    &lt;DIR&gt;          react-router-v4</span><br><span class="line">               0 个文件              0 字节</span><br><span class="line">               5 个目录 842,762,387,456 可用字节</span><br><span class="line"></span><br><span class="line">F:\WebDev\react\LearnReact&gt;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">### 删除某个文件夹使用命令`rmdir`或者`rd`</span></span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">F:\WebDev\react\LearnReact&gt;dir</span><br><span class="line"> 驱动器 F 中的卷是 移动硬盘</span><br><span class="line"> 卷的序列号是 1AEA-6007</span><br><span class="line"></span><br><span class="line"> F:\WebDev\react\LearnReact 的目录</span><br><span class="line"></span><br><span class="line">2017/12/19  16:23    &lt;DIR&gt;          .</span><br><span class="line">2017/12/19  16:23    &lt;DIR&gt;          ..</span><br><span class="line">2017/12/19  16:23    &lt;DIR&gt;          my-app</span><br><span class="line">2017/07/30  23:36    &lt;DIR&gt;          react</span><br><span class="line">2017/12/19  16:04    &lt;DIR&gt;          react-router-v4</span><br><span class="line">               0 个文件              0 字节</span><br><span class="line">               5 个目录 842,762,387,456 可用字节</span><br><span class="line"></span><br><span class="line">F:\WebDev\react\LearnReact&gt;rmdir my-app</span><br><span class="line"></span><br><span class="line">F:\WebDev\react\LearnReact&gt;dir</span><br><span class="line"> 驱动器 F 中的卷是 移动硬盘</span><br><span class="line"> 卷的序列号是 1AEA-6007</span><br><span class="line"></span><br><span class="line"> F:\WebDev\react\LearnReact 的目录</span><br><span class="line"></span><br><span class="line">2017/12/19  16:30    &lt;DIR&gt;          .</span><br><span class="line">2017/12/19  16:30    &lt;DIR&gt;          ..</span><br><span class="line">2017/07/30  23:36    &lt;DIR&gt;          react</span><br><span class="line">2017/12/19  16:04    &lt;DIR&gt;          react-router-v4</span><br><span class="line">               0 个文件              0 字节</span><br><span class="line">               4 个目录 842,762,387,456 可用字节</span><br><span class="line"></span><br><span class="line">F:\WebDev\react\LearnReact&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="命令行清屏命令cls"><a href="#命令行清屏命令cls" class="headerlink" title="命令行清屏命令cls"></a>命令行清屏命令<code>cls</code></h3>
+<h3 id="正则表达式的重复字符语法"><a href="#正则表达式的重复字符语法" class="headerlink" title="正则表达式的重复字符语法"></a>正则表达式的重复字符语法</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>{n,m}</code></td>
+<td style="text-align:center">匹配前一项至少n次，至多m次</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>{n,}</code></td>
+<td style="text-align:center">匹配前一项n次或更多次</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>{n}</code></td>
+<td style="text-align:center">匹配前一项n次</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>？</code></td>
+<td style="text-align:center">匹配前一项0次或1次，也就是说前一项是可选的，等价于{0,1}</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>+</code></td>
+<td style="text-align:center">匹配前一项1次或多次，等价于{1，}</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>*</code></td>
+<td style="text-align:center">匹配前一项0次或多次，等价于{0，}</td>
+</tr>
+</tbody>
+</table>
+<h3 id="正则表达式中的锚字符"><a href="#正则表达式中的锚字符" class="headerlink" title="正则表达式中的锚字符"></a>正则表达式中的锚字符</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>^</code></td>
+<td style="text-align:center">匹配字符串的开头，在多行检索中，匹配一行的开头</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>$</code></td>
+<td style="text-align:center">匹配字符串的结尾，在多行检索中，匹配一行的结尾</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\b</code></td>
+<td style="text-align:center">匹配一个单词的边界，简言之，就是位于字符<code>\w</code>和<code>\W</code>之间的位置，或位于字符<code>\w</code>和字符串的开头或者结尾之间的位置（但需要注意，<code>[\b]</code>匹配的是退格符）</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\B</code></td>
+<td style="text-align:center">匹配非单词边界的位置</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>(?=p)</code></td>
+<td style="text-align:center">零宽正向先行断言，要求接下来的字符都与p匹配，但不能包括匹配p的那些字符</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>(?!p)</code></td>
+<td style="text-align:center">零宽负向先行断言，要求接下来的字符不与p匹配</td>
+</tr>
+</tbody>
+</table>
+<p><code>\b</code>:<strong>匹配的是单词，而不是单词中的某个部分</strong>。并且它只会匹配字符串开头结尾及空格回车等的位置，不会匹配空格符本身。</p>
+<p>比如在句子<code>I like bike</code>中，有很多的<code>i</code>，我只想匹配<code>I</code>这个独立的单词，那么需要使用<code>\bI\b</code>。注意<code>\sI\s</code>匹配的是<code>I</code>（单词前后有空格）。</p>
+<p><code>先行断言</code>：如果在符号<code>(?=</code>和<code>）</code>之间加入一个表达式，他就是一个先行断言，用以说明圆括号内的表达式必须正确匹配，但不是真正意义上的匹配。比如，要匹配一种常用的程序设计语言的名字，但只在其后有冒号时才匹配，可以使用<code>/[Jj]ava([Ss]cript)?(?=\:)/</code>，这个正则表达式可以匹配”JavaScript: The Definitive Guide”中的”JavaScript”，但是不能匹配”Java in a Nutshell” 中的”Java”，因为它后面没有冒号。</p>
+<h3 id="用于模式匹配的String方法-4种"><a href="#用于模式匹配的String方法-4种" class="headerlink" title="用于模式匹配的String方法(4种)"></a>用于模式匹配的String方法(4种)</h3><p><code>search()</code>、<code>replace()</code>、<code>match()</code>、<code>split()</code></p>
+<h3 id="密码验证-包含大小写字母，数字，特殊字符"><a href="#密码验证-包含大小写字母，数字，特殊字符" class="headerlink" title="密码验证:包含大小写字母，数字，特殊字符"></a>密码验证:包含大小写字母，数字，特殊字符</h3><pre><code>以上类别都包含
+/^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)(?=.*?[#@*&amp;.]).*$/
+如果是要求包含且只包含
+/^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)(?=.*?[#@*&amp;.])[a-zA-Z\d#@*&amp;.]*$/
+</code></pre><h3 id="正则提取字符"><a href="#正则提取字符" class="headerlink" title="正则提取字符"></a>正则提取字符</h3><blockquote>
+<p>假定我们正在检索的模式是一个或多个小写字母后面跟随了一位或多位数字，则可以使用模式/[a-z]+\d+/。但假定我们<br>真正关心的是每个匹配尾部的数字，那么如果将模式的数字部分放到括号中(/[a-z]+(\d+)/)，就可以从检索<br>到的匹配中抽取数字了。</p>
+</blockquote>
+<pre><code>var str=&apos;translate(12.5,32.1)&apos;;
+    var _str=str.match(/translate\((.*)\)/);
+    console.log(_str);
+</code></pre><h3 id="RegExp的方法"><a href="#RegExp的方法" class="headerlink" title="RegExp的方法"></a>RegExp的方法</h3><ul>
+<li>exec()</li>
+</ul>
+<p><code>exec()</code>方法对一个指定的字符串执行一个正则表达式。就是在一个字符串中执行匹配检索，如果没有找到任何匹配，它就返回null，但如果它找到了一个匹配，它将返回一个数组。exec()方法与<code>String方法match()</code>相似，只是RegExp方法的参数是一个<code>字符串</code>，而String方法的参数是一个<code>RegExp</code>对象。</p>
+<ul>
+<li>test()</li>
+</ul>
+<p>参数是一个字符串，用test()对某个字符串进行检测，如果包含正则表达式的一个匹配结果，则返回true。</p>
+<h4 id="使用案例"><a href="#使用案例" class="headerlink" title="使用案例"></a>使用案例</h4><ol>
+<li><p>后台传回来时间格式的字符串为<code>2018-01-25 15:19:12.532</code>，我们要转换成时间对象，本地使用<code>Date.parse()</code>去转换带有毫秒的字符串貌似会在<code>ie</code>内核浏览器上转换出错。</p>
+<p>不使用正则表达式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">`2018-01-25 15:19:12.532`</span>;</span><br><span class="line"><span class="keyword">var</span> objDate=<span class="built_in">Date</span>.parse(str.replace(<span class="regexp">/-/g</span>,<span class="string">'/'</span>).split(<span class="string">'.'</span>)[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
+<p>使用正则表达式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">`2018-01-25 15:19:12.532`</span>;</span><br><span class="line"><span class="comment">// \s表示任何的Unicode空白符，\S表示任何非Unicode空白符，[...]表示方括号内的任意字符，*表示匹配前一项0次或者多次</span></span><br><span class="line"><span class="keyword">var</span> objDate=<span class="built_in">Date</span>.parse(str.replace(<span class="regexp">/-/g</span>,<span class="string">'/'</span>).replace(<span class="regexp">/\.[\s\S]*/g</span>,<span class="string">''</span>));</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
       
 
       
@@ -223,7 +367,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">windows-shell</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">正则</a>
         		</li>
       		
 		</ul>
@@ -235,7 +379,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/coding//" class="article-tag-list-link color2">coding</a>
+        			<a href="/categories/Coding//" class="article-tag-list-link color2">Coding</a>
         		</li>
       		
 		</ul>
@@ -290,7 +434,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/12/20/windows-shell/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/04/09/正则表达式相关知识/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -304,18 +448,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/21/JavaScript立即执行函数/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          JavaScript立即执行函数
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/12/11/hexo-note/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hexo结合Github搭建博客</div>
+    <a href="/2018/03/05/Node-Spider/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Node-Spiderr</div>
       <i class="icon-circle-right"></i>
     </a>
   
