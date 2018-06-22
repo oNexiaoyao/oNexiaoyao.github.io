@@ -161,6 +161,491 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-React笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/22/React笔记/">React笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/22/React笔记/" class="archive-article-date">
+  	<time datetime="2018-06-22T02:38:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>入门推荐</strong></p>
+<p><a href="https://reactjs.org/" target="_blank" rel="noopener">跟随官网教程入门</a></p>
+<p><a href="http://huziketang.mangojuice.top/books/react/" target="_blank" rel="noopener">阅读“reactJs 小书”加强理解</a></p>
+<p><a href="">阅读react源码</a></p>
+<p><strong>安装快速启动种子文件</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm  install -g create-react-app</span><br></pre></td></tr></table></figure>
+<p><strong>使用种子文件创建TypeScript类型的环境<a href="https://github.com/Microsoft/TypeScript-React-Starter#typescript-react-starter" target="_blank" rel="noopener">参考资料</a></strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create-react-app my-app --scripts-version=react-scripts-ts</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018/06/22/React笔记/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Coding//" class="article-tag-list-link color2">Coding</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/22/React笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-鼠标Event事件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/22/鼠标Event事件/">鼠标Event事件</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/22/鼠标Event事件/" class="archive-article-date">
+  	<time datetime="2018-06-22T01:48:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Event对象、获取Dom元素显示tips"><a href="#Event对象、获取Dom元素显示tips" class="headerlink" title="Event对象、获取Dom元素显示tips"></a>Event对象、获取Dom元素显示tips</h2><p><strong> 鼠标Event对象 </strong></p>
+<p>Event对象代表事件的状态，比如事件在其中发生的元素、键盘按键的状态、鼠标的位置、鼠标按钮的状态。</p>
+<p><strong> event.currentTarget和event.target的区别 </strong><a href="http://www.cnblogs.com/chaoyuehedy/p/5692899.html" target="_blank" rel="noopener">参考资料</a></p>
+<p>事件捕获层上有多个节点，单击时，得到的currentTarget是设定的捕获层节点（事件绑定的元素），而target则是实际被单击的节点，<br>实际被单击的节点通常位于currentTarget之内的子节点或是其本身</p>
+<p>event对象screenX、clientX 、pageX区别。<a href="http://www.cnblogs.com/jicheng/p/5944355.html" target="_blank" rel="noopener">参考资料</a></p>
+<p><strong> 获取dom元素的位置信息 </strong></p>
+<ol>
+<li>getBoundingClientRect方法用于获得页面中某个元素的左，上，右和下分别相对浏览器视窗window的位置。返回的是一个对象，该对象有四个属性：top，left，right，bottom；该方法原本是IE Only的，但是FF3.0+和Opera9.5+已经支持了该方法，可以说在获得页面元素位置上效率有很大的提高。 另外，该方法避免使用while循环，而是直接获取数值来实现，比第一种方法性能要好，特别是在复杂的页面上更为明显。<br><a href="http://blog.csdn.net/ssisse/article/details/52311713" target="_blank" rel="noopener">参考资料</a></li>
+</ol>
+<p><strong> 鼠标滑过显示tip提示框 </strong></p>
+<ol>
+<li>常规dom结构标签，生成常规标签</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyOnMouseOver</span>(<span class="params">event, hint, mytimr</span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"#svgtips"</span>).css(&#123; <span class="string">"display"</span>: <span class="string">"block"</span>, <span class="string">"top"</span>: $(event.currentTarget).offset().top + event.currentTarget.getBoundingClientRect().height, <span class="string">"left"</span>: $(event.currentTarget).offset().left + event.currentTarget.getBoundingClientRect().width &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyOnMouseOut</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"#svgtips"</span>).css(<span class="string">"display"</span>, <span class="string">"none"</span>);</span><br><span class="line">    $(<span class="string">"#svgtips"</span>).html(<span class="string">""</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>结合svg，在svg内部生成svg的标签</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ShuZiLiang_MouseOver</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (event.target.parentNode.getAttribute(<span class="string">'hint'</span>)) &#123;</span><br><span class="line">        <span class="comment">//如果配置了hint的描述值</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">document</span>.getElementById(<span class="string">'svgtip_box'</span>)) &#123;</span><br><span class="line">            <span class="comment">//页面已经存在提示框</span></span><br><span class="line">            <span class="built_in">document</span>.getElementById(<span class="string">'svgtip_box'</span>).style.display = <span class="string">'block'</span>;</span><br><span class="line">            <span class="keyword">var</span> _obj = <span class="built_in">document</span>.getElementById(<span class="string">'svgtip_box'</span>).getElementsByTagName(<span class="string">'text'</span>);</span><br><span class="line">            _obj[<span class="number">0</span>].setAttribute(<span class="string">'x'</span>, event.target.getBBox().x);</span><br><span class="line">            _obj[<span class="number">0</span>].setAttribute(<span class="string">'y'</span>, event.target.getBBox().y);</span><br><span class="line">            _obj[<span class="number">0</span>].textContent = event.target.parentNode.getAttribute(<span class="string">'hint'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">var</span> _tip = <span class="built_in">document</span>.createElementNS(<span class="string">"http://www.w3.org/2000/svg"</span>, <span class="string">"g"</span>);</span><br><span class="line">            _tip.setAttribute(<span class="string">'id'</span>, <span class="string">'svgtip_box'</span>);</span><br><span class="line">            _tip.setAttribute(<span class="string">'transform'</span>, event.target.parentNode.getAttribute(<span class="string">'transform'</span>));</span><br><span class="line">            <span class="keyword">var</span> _tipText = <span class="built_in">document</span>.createElementNS(<span class="string">"http://www.w3.org/2000/svg"</span>, <span class="string">"text"</span>);</span><br><span class="line">            _tipText.textContent = event.target.parentNode.getAttribute(<span class="string">'hint'</span>);</span><br><span class="line">            _tipText.setAttribute(<span class="string">'x'</span>, event.target.getBBox().x);</span><br><span class="line">            _tipText.setAttribute(<span class="string">'y'</span>, event.target.getBBox().y);</span><br><span class="line">            _tipText.setAttribute(<span class="string">'fill'</span>, <span class="string">'#555'</span>);</span><br><span class="line">            _tipText.style.fontSize = <span class="string">'16px'</span>;</span><br><span class="line">            _tip.appendChild(_tipText);</span><br><span class="line">            <span class="built_in">console</span>.log(_tipText);</span><br><span class="line">            <span class="built_in">console</span>.log(event.target.ownerDocument.getElementsByTagName(<span class="string">"svg"</span>)[<span class="number">0</span>]);</span><br><span class="line">            <span class="built_in">console</span>.log(_tip);</span><br><span class="line">            <span class="comment">//event.target.ownerDocument.rootElement.appendChild(_tip);</span></span><br><span class="line">            <span class="keyword">if</span> (event.target.ownerDocument.getElementsByTagName(<span class="string">"svg"</span>)[<span class="number">0</span>]) &#123;</span><br><span class="line">                event.target.ownerDocument.getElementsByTagName(<span class="string">"svg"</span>)[<span class="number">0</span>].appendChild(_tip);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ShuZiLiang_MouseOut</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">document</span>.getElementById(<span class="string">'svgtip_box'</span>)) &#123;</span><br><span class="line">        $(<span class="string">"#svgtip_box"</span>).remove();</span><br><span class="line">        <span class="comment">//$("#svgtip_box").css("display", "none");</span></span><br><span class="line">        <span class="comment">//document.getElementById('tip_box').parentNode.removeChild(document.getElementById('tip_box'));</span></span><br><span class="line">        <span class="comment">//event.target.ownerDocument.getElementsByTagName("svg")[0].removeChild(document.getElementById('tip_box'));</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Event</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Coding//" class="article-tag-list-link color2">Coding</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/22/鼠标Event事件/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-逻辑运算符的复杂运用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/22/逻辑运算符的复杂运用/">逻辑运算符的复杂运用</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/22/逻辑运算符的复杂运用/" class="archive-article-date">
+  	<time datetime="2018-06-22T01:46:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong> 逻辑与（&amp;&amp;）、逻辑或（||）</strong></p>
+<p>除去正常的使用逻辑关系外，更复杂的应用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o=&#123;<span class="attr">x</span>:<span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> p=<span class="literal">null</span>;</span><br><span class="line">o &amp;&amp; o.x <span class="comment">// =&gt;1: 因为逻辑运算符的左侧是真值，所以继续计算运算符的右侧的值并返回该值</span></span><br><span class="line">p &amp;&amp; p.x <span class="comment">// =&gt;null: 因为运算符的左侧p是假值，所以直接返回p，不会继续计算右侧的p.x</span></span><br></pre></td></tr></table></figure>
+<p>巧妙使用的好处：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 普通的方法</span></span><br><span class="line"><span class="keyword">var</span> len=<span class="literal">undefined</span>;</span><br><span class="line"><span class="keyword">if</span>(book)&#123;</span><br><span class="line">    <span class="keyword">if</span>(book.subtitle)&#123;</span><br><span class="line">        len=book.subtitle.length;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 使用逻辑运算符，更加简洁</span></span><br><span class="line"> <span class="keyword">var</span> len=book &amp;&amp; book.subtitle &amp;&amp; book.subtitle.length;</span><br></pre></td></tr></table></figure>
+<p>使用逻辑或（||）来设置默认值：</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 先判断逻辑运算符的左侧的max_width是否是真值。是真值，直接返回该值，不是真值，则继续计算逻辑运算符的右侧</span></span><br><span class="line"><span class="keyword">var</span> max = max_width || preferences.max_width || <span class="number">500</span>;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">逻辑运算符</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Coding//" class="article-tag-list-link color2">Coding</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/22/逻辑运算符的复杂运用/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JS事件触发流程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/22/JS事件触发流程/">JS事件触发流程</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/22/JS事件触发流程/" class="archive-article-date">
+  	<time datetime="2018-06-22T01:40:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JS事件触发的流程"><a href="#JS事件触发的流程" class="headerlink" title="JS事件触发的流程"></a>JS事件触发的流程</h2><p><strong> JS事件触发的流程 </strong></p>
+<p>DOM2事件流分为三个阶段：事件捕获–》事件目标–》事件冒泡 （IE8及更早版本不支持事件流。。）。</p>
+<p><a href="https://www.cnblogs.com/diligenceday/p/4175721.html" target="_blank" rel="noopener">DOM0、DOM2(没有DOM1级)、DOM3</a></p>
+<p>HTML事件处理程序: </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"button"</span> name=<span class="string">""</span> id=<span class="string">"btn"</span> onclick=<span class="string">"alert('hello world~');"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>DOM0级事件处理程序：</p>
+        
+          <a class="article-more-a" href="/2018/06/22/JS事件触发流程/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Event事件</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Coding//" class="article-tag-list-link color2">Coding</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/22/JS事件触发流程/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-HTTP协议-Options方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/22/HTTP协议-Options方法/">HTTP协议-Options方法</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/22/HTTP协议-Options方法/" class="archive-article-date">
+  	<time datetime="2018-06-22T01:22:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>常见的web请求中使用到的http请求方法：get、post、put、delete</p>
+<p>发生的场景：</p>
+<p>公司新项目实现前后端分离后，某天调试页面一个数据请求接口，一直报403的错误。用fiddler抓包分析，发现该接口竟然是Options请求（请求方法中使用的是get谓词），却没有真正的发送期待中的get请求。 Options是什么鬼？之前开发一直没有遇到过。。后来问了下同事，说是这是由于跨域请求引起的。。</p>
+<p>查找资料获得：</p>
+<p>HTTP权威指南对Options方法的解释：</p>
+<blockquote>
+<p>OPTIONS方法请求web服务器告知其支持的各种功能。可以询问服务器通常支持哪些方法，或者对某些特殊资源支持哪些方法。（有些服务器可能只支持对一些特殊类型的对象使用特定的操作）</p>
+</blockquote>
+<p>W3C规范中，跨域请求分为简单请求和复杂请求。简单请求不需要发送Options嗅探请求，但是只能发送简单的get/head/post请求，且不能自定义http的<code>headers</code>。复杂请求包含<code>preflighted请求</code>和<code>preflighted认证请求</code>。复杂请求在发送真正的请求前会提前发送一次Options请求（嗅探、预检请求），<code>XHR</code>会根据返回的<code>Access-Control-*</code>等头信息判断是否有对指定站点的访问权限，检查该请求是否是可靠安全的。如果options获得的回应是拒绝性质的（或者没有权限），会停止发送实际请求信息。</p>
+<p>处理方法：</p>
+<p>一般来说这个是后台需要处理的，开放所有的或者预料中的请求方法权限。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Http</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Coding//" class="article-tag-list-link color2">Coding</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/22/HTTP协议-Options方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-正则表达式相关知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -687,535 +1172,6 @@
 
 
   
-    <article id="post-JavaScript浅拷贝和深拷贝" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/31/JavaScript浅拷贝和深拷贝/">JavaScript浅拷贝和深拷贝</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/31/JavaScript浅拷贝和深拷贝/" class="archive-article-date">
-  	<time datetime="2018-01-31T06:27:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="JavaScript的浅拷贝和深拷贝"><a href="#JavaScript的浅拷贝和深拷贝" class="headerlink" title="JavaScript的浅拷贝和深拷贝"></a>JavaScript的浅拷贝和深拷贝</h3><p><code>浅拷贝</code>：浅拷贝是拷贝引用，拷贝后的引用都是指向同一个对象的实例，彼此之间的操作会互相影响。<br><code>深拷贝</code>：在堆中重新分配内存，并且把源对象所有属性都进行新建拷贝，以保证深拷贝的对象的引用不包含任何原有对象或对象上任何对象，拷贝后的对象与原来的对象完全隔离，互不影响。</p>
-<p><code>浅拷贝</code>和<code>深拷贝</code>是针对变量类型为<code>引用类型</code>来说的。其实质区别是是否真正的获取到要复制对象的实体。</p>
-<p>javascript中的变量分为<code>基本类型</code>和<code>引用类型</code>，基本类型就是保存在<code>栈内存</code>中的简单数据段，引用类型指的是那些保存在<code>堆内存</code>中的对象。</p>
-<p><code>栈内存</code>：存放基本类型。<code>堆内存</code>：存放引用类型(在栈内存中存一个基本类型值保存对象在堆内存中的地址，用于引用这个存放在堆内存中的对象)</p>
-<ol>
-<li>基本类型：undefined、null、boolean、number和string。这些类型在内存中分别占有固定大小的空间，他们的值保存在栈空间，我们通过<code>按值来访问</code>。</li>
-<li>引用类型：值的大小不固定，栈内存中存放的是地址来指向堆内存中的对象。是<code>按引用访问的</code>。栈内存中存放的只是该对象的访问地址，在堆内存中为这个值分配空间。由于这种值的大小不固定，因此不能把他们保存到栈内存中，但由于内存地址大小是固定的，因此可以将内存地址保存到栈内存中。这样，当查询引用类型的变量时，先从栈中读取内存地址，然后再通过内存地址找到堆内存中的值。对于这种，我们叫做<code>按引用访问</code>。</li>
-<li>基本类型在当前执行环境结束时销毁，而引用类型不会随执行环境结束而销毁，只有当所有引用它的变量不存在时，这个对象才被垃圾回收机制回收。</li>
-</ol>
-        
-          <a class="article-more-a" href="/2018/01/31/JavaScript浅拷贝和深拷贝/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">函数</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Coding//" class="article-tag-list-link color2">Coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/31/JavaScript浅拷贝和深拷贝/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript函数去抖和函数节流" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/23/JavaScript函数去抖和函数节流/">JavaScript函数去抖和函数节流</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/23/JavaScript函数去抖和函数节流/" class="archive-article-date">
-  	<time datetime="2018-01-23T03:15:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JavaScript函数去抖与函数节流"><a href="#JavaScript函数去抖与函数节流" class="headerlink" title="JavaScript函数去抖与函数节流"></a>JavaScript函数去抖与函数节流</h2><p>实际碰到的场景一：</p>
-<p>之前公司网站上有个需求：鼠标划出二级菜单则收缩一二级菜单，然后内容主体部分展示区域变大（动画实现效果）。当时做的时候自己也只是很简单的加了个鼠标事件，结果在实际使用中发现，当你来回移动鼠标很快的时候，动画事件会一直持续，造成页面显示卡顿，这个对用户体验很差。</p>
-<p>实际遇到的场景二：</p>
-<p>有个页面的输入框要实现根据用户的持续不断的输入动态显示几个下拉选项供用户挑选（类似百度搜索的效果），这种情况下应该不应该每输入一个字就进行ajax调用，而应该实现一段时间内执行一次。</p>
-<p>具体可能的应用场景：</p>
-<ol>
-<li>window对象的<code>resize</code>、<code>scroll</code>事件</li>
-<li>拖拽时的事件</li>
-<li>鼠标移入移出事件</li>
-<li>输入框文字输入事件</li>
-</ol>
-        
-          <a class="article-more-a" href="/2018/01/23/JavaScript函数去抖和函数节流/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">函数</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Coding//" class="article-tag-list-link color2">Coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/23/JavaScript函数去抖和函数节流/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript实现二分查找法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/23/JavaScript实现二分查找法/">JavaScript实现二分查找法</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/23/JavaScript实现二分查找法/" class="archive-article-date">
-  	<time datetime="2018-01-23T02:15:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="JavaScript实现二分查找法"><a href="#JavaScript实现二分查找法" class="headerlink" title="JavaScript实现二分查找法"></a>JavaScript实现二分查找法</h3><p>二分法查找，也称折半查找，是一种在<code>有序数组</code>中查找特定元素的搜索算法</p>
-<h4 id="使用递归的方法"><a href="#使用递归的方法" class="headerlink" title="使用递归的方法"></a>使用递归的方法</h4><p><font color="#DC143C">弊端</font>:<em>当递归次数非常大的时候，浏览器会报堆栈溢出的错</em> <a href="https://www.cnblogs.com/cuew1987/p/4122856.html" target="_blank" rel="noopener">什么是堆栈溢出？</a><a href="http://www.ruanyifeng.com/blog/2015/04/tail-call.html" target="_blank" rel="noopener">怎么处理堆栈溢出</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 从有序数组的最中间元素开始查找，如果该元素正好是指定查找的值，则查找过程结束。否则进行下一步; </span></span><br><span class="line"><span class="comment"> * 如果指定要查找的元素大于或者小于中间元素，则在数组大于或小于中间元素的那一半区域查找，然后重复第一步的操作</span></span><br><span class="line"><span class="comment"> * 重复以上过程，直到找到目标元素的索引，查找成功;或者直到子数组为空，查找失败</span></span><br><span class="line"><span class="comment"> * @param &#123;any&#125; data --要查找的有序数组 </span></span><br><span class="line"><span class="comment"> * @param &#123;any&#125; key --查找的的目标值</span></span><br><span class="line"><span class="comment"> * @param &#123;any&#125; start --开始查找的数组下标</span></span><br><span class="line"><span class="comment"> * @param &#123;any&#125; end --结束查找的数组下标</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">binarySearch</span>(<span class="params">data, key, start, end</span>) </span>&#123;</span><br><span class="line">    start = start || <span class="number">0</span>;</span><br><span class="line">    end = end || data.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> _binaryIndex = <span class="built_in">Math</span>.floor((start + end) / <span class="number">2</span>);</span><br><span class="line">    <span class="comment">// 递归出口条件</span></span><br><span class="line">    <span class="keyword">if</span> (start &gt; end) &#123;</span><br><span class="line">        <span class="comment">// 如果该数组没有找到该key,则返回距离其最近的上一个值的索引号</span></span><br><span class="line">        <span class="keyword">return</span> end;</span><br><span class="line">        <span class="comment">// // 如果该数组没有找到该key,则返回距离其最近的下一个值的索引号</span></span><br><span class="line">        <span class="comment">// return start;</span></span><br><span class="line">        <span class="comment">// // 如果该数组没有找到该key,则返回-1</span></span><br><span class="line">        <span class="comment">// return -1;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (key == data[_binaryIndex]) &#123;</span><br><span class="line">        <span class="keyword">return</span> _binaryIndex;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (key &lt; data[_binaryIndex]) &#123;</span><br><span class="line">            <span class="keyword">return</span> binarySearch(data, key, start, _binaryIndex - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> binarySearch(data, key, _binaryIndex + <span class="number">1</span>, end);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">-34</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">34</span>, <span class="number">45</span>, <span class="number">65</span>, <span class="number">87</span>];        </span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"索引是:"</span>+binarySearch(arr,<span class="number">7</span>));</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/01/23/JavaScript实现二分查找法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Coding//" class="article-tag-list-link color2">Coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/23/JavaScript实现二分查找法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Html-Css-Note(一)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/16/Html-Css-Note(一)/">Html-Css-Note(一)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/16/Html-Css-Note(一)/" class="archive-article-date">
-  	<time datetime="2018-01-16T14:12:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="对WEB标准以及W3C的理解与认识"><a href="#对WEB标准以及W3C的理解与认识" class="headerlink" title="对WEB标准以及W3C的理解与认识"></a>对WEB标准以及W3C的理解与认识</h3><p>标签闭合、标签小写、不乱嵌套、提高搜索机器人搜索几率、使用外链css和js脚本、结构行为表现的分离、文件下载与页面速度更快、内容能被更多的用户所访问、内容能被更广泛的设备所访问、更少的代码和组件，容易维护、改版方便，不需要变动页面内容、提供打印版本而不需要复制内容、提高网站易用性；</p>
-<h3 id="xhtml和html有什么区别"><a href="#xhtml和html有什么区别" class="headerlink" title="xhtml和html有什么区别"></a>xhtml和html有什么区别</h3><p>HTML是一种基本的WEB网页设计语言，XHTML是一个基于XML的置标语言<br>最主要的不同：<br>XHTML 元素必须被正确地嵌套。<br>XHTML 元素必须被关闭。<br>标签名必须用小写字母。<br>XHTML 文档必须拥有根元素。<br>XHTML属于HTML向XML过渡的语言</p>
-<h3 id="Doctype-严格模式与混杂模式-如何触发这两种模式，区分它们有何意义-参考理解"><a href="#Doctype-严格模式与混杂模式-如何触发这两种模式，区分它们有何意义-参考理解" class="headerlink" title="Doctype? 严格模式与混杂模式-如何触发这两种模式，区分它们有何意义?参考理解"></a>Doctype? 严格模式与混杂模式-如何触发这两种模式，区分它们有何意义?<a href="https://www.cnblogs.com/wuqiutong/p/5986191.html" target="_blank" rel="noopener">参考理解</a></h3>
-        
-          <a class="article-more-a" href="/2018/01/16/Html-Css-Note(一)/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Html/Css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Coding//" class="article-tag-list-link color2">Coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/16/Html-Css-Note(一)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Sass-Note" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/04/Sass-Note/">Sass-Note</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/04/Sass-Note/" class="archive-article-date">
-  	<time datetime="2018-01-04T07:23:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Sass是采用Ruby语言编写的一款CSS预处理语言"><a href="#Sass是采用Ruby语言编写的一款CSS预处理语言" class="headerlink" title="Sass是采用Ruby语言编写的一款CSS预处理语言"></a><code>Sass</code>是采用Ruby语言编写的一款<code>CSS预处理语言</code></h3><h3 id="Sass和Scss其实是同一种东西，都称之为Sass。"><a href="#Sass和Scss其实是同一种东西，都称之为Sass。" class="headerlink" title="Sass和Scss其实是同一种东西，都称之为Sass。"></a><code>Sass</code>和<code>Scss</code>其实是同一种东西，都称之为<code>Sass</code>。</h3><p>区别：</p>
-<ol>
-<li><code>Sass</code>是以’.sass’后缀为扩展名，<code>Scss</code>是以’.scss’后缀为扩展名</li>
-<li><code>Sass</code>是以严格对的缩进式语法规则来书写，不带大括号（{}）和分号（;），而<code>Scss</code>的语法书写和我们的css语法书写方式非常类似</li>
-</ol>
-<h2 id="Saaa安装"><a href="#Saaa安装" class="headerlink" title="Saaa安装"></a><code>Saaa</code><a href="https://www.w3cplus.com/sassguide/" target="_blank" rel="noopener">安装</a></h2><p>推荐一款前端预处理器语言图形编译工具<a href="http://koala-app.com/index-zh.html" target="_blank" rel="noopener">Koala</a></p>
-<h3 id="Sass的安装前提条件需要是在Ruby环境下。"><a href="#Sass的安装前提条件需要是在Ruby环境下。" class="headerlink" title="Sass的安装前提条件需要是在Ruby环境下。"></a><code>Sass</code>的安装前提条件需要是在<code>Ruby</code>环境下。</h3><p>检测是否已经安装<code>ruby</code>:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ruby -v</span><br></pre></td></tr></table></figure>
-<p>ruby安装完后在开始菜单找到<code>Start Command Prompt with Ruby</code>，点击进入后直接命令行输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem install sass</span><br></pre></td></tr></table></figure>
-<p>上面的方法有可能会被墙，如果不行百度使用镜像方法安装。</p>
-<p>查看是否安装成功：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">F:\WebDev\react\SAC.WEB.2.0&gt;sass -v</span><br><span class="line">Sass 3.5.4 (Bleeding Edge)</span><br><span class="line"></span><br><span class="line">F:\WebDev\react\SAC.WEB.2.0&gt;</span><br></pre></td></tr></table></figure>
-<p>使用sass编译文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sass  **.scss  ***.css</span><br></pre></td></tr></table></figure>
-<p>单文件监听命令(实时更新)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sass --watch style.scss:style.css</span><br></pre></td></tr></table></figure>
-<p>文件夹监听命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sass --watch sassFileDirectory:cssFileDirectory</span><br></pre></td></tr></table></figure>
-<p>css文件转成sass/scss文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sass-convert style.css style.sass</span><br><span class="line">sass-convert style.css style.scss</span><br></pre></td></tr></table></figure>
-<p><code>--style</code>表示解析后的css是什么格式，有四种取值分别为：nested,expanded,compact,compressed。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sass --watch style.scss:style.css --style expanded</span><br></pre></td></tr></table></figure>
-<h3 id="Sass的导入"><a href="#Sass的导入" class="headerlink" title="Sass的导入"></a>Sass的<code>导入</code></h3><p>通过使用关键词<code>@import</code>来导入scss文件，编译时会将<code>@import</code>的scss文件合并进来只生成一个CSS文件。但是如果是按这个方法来导入css文件，则效果跟普通css导入样式文件一样，导入的css文件不会合并到编译后文件中去，而是以<code>@import</code>方式存在。</p>
-<h3 id="Sass的注释"><a href="#Sass的注释" class="headerlink" title="Sass的注释"></a>Sass的<code>注释</code></h3><p>标准的css注释：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* 这里是块级注释</span><br><span class="line">* 再来一行</span><br><span class="line">*/</span><br><span class="line">p&#123;</span><br><span class="line">    background-color: <span class="comment">#fff;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>双斜杠单行注释：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// this is ***</span><br><span class="line">p&#123;</span><br><span class="line">    background-color: <span class="comment">#fff;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>标准的css注释转译后会显示出来，双斜杠单行注释则不显示出来</strong></p>
-<h3 id="Sass的变量"><a href="#Sass的变量" class="headerlink" title="Sass的变量"></a>Sass的<code>变量</code></h3><p>sass的变量必须以<code>$</code>开头，后面紧跟变量名，而变量值和变量名之间就需要使用冒号<code>:</code>分隔开，如果值后面加上<code>！default</code>则表示默认值。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 定义字体尺寸变量</span><br><span class="line"><span class="variable">$fontSize</span>:16px;</span><br><span class="line"></span><br><span class="line">body &#123;</span><br><span class="line">    // 这里引用定义的变量</span><br><span class="line">    font-size: <span class="variable">$fontSize</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="默认变量"><a href="#默认变量" class="headerlink" title="默认变量"></a>默认变量</h4><p>使用<code>！default</code>来设置默认变量一般用来设置默认值，然后根据需求来覆盖。默认变量的价值在进行<code>组件化</code>开发的时候会比较有用。</p>
-<h4 id="特殊变量"><a href="#特殊变量" class="headerlink" title="特殊变量"></a>特殊变量</h4><p>一般我们定义的变量都是属性值加值的变量，但有时候有的变量是作为属性来使用的,使用方法：以<code>#{$variables}</code>形式使用</p>
-<p>.scss文件转译前<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/* </span><br><span class="line">* 特殊变量</span><br><span class="line">*/</span><br><span class="line"><span class="variable">$borderDirection</span>: top !default;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">* 应用于class或者属性</span><br><span class="line">*</span><br><span class="line">*/</span><br><span class="line">.container-<span class="comment">#&#123;$borderDirection&#125; &#123;</span></span><br><span class="line">    border-<span class="comment">#&#123;$borderDirection&#125;:1px solid #ccc;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>.css转译后<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/* </span><br><span class="line">* 特殊变量</span><br><span class="line">*/</span><br><span class="line">/*</span><br><span class="line">* 应用于class或者属性</span><br><span class="line">*</span><br><span class="line">*/</span><br><span class="line">.container-top &#123;</span><br><span class="line">  border-top: 1px solid <span class="comment">#ccc; &#125;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="Sass的嵌套"><a href="#Sass的嵌套" class="headerlink" title="Sass的嵌套"></a>Sass的<code>嵌套</code></h3><p>sass的嵌套包括两种：一种是选择器的嵌套；另一种是属性的嵌套。我们一般使用的是选择器的嵌套</p>
-<h4 id="选择器嵌套"><a href="#选择器嵌套" class="headerlink" title="选择器嵌套"></a>选择器嵌套</h4><p>选择器嵌套指的是在一个选择器中嵌套另一个选择器来实现继承，从而增强sass文件的结构性和可读性。<br>在选择器嵌套中，使用<code>&amp;</code>来表示父元素选择器。</p>
-<p>转译前.scss文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* scss嵌套语法</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">.top-nav &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    left: 0;</span><br><span class="line">    right: 0;</span><br><span class="line"></span><br><span class="line">    li &#123;</span><br><span class="line">        list-style: none;</span><br><span class="line">        height: 40px;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    a &#123;</span><br><span class="line">        text-decoration: none;</span><br><span class="line">        color: <span class="comment">#fff;</span></span><br><span class="line"></span><br><span class="line">        &amp;:hover &#123;</span><br><span class="line">            color: <span class="comment">#456;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>转译后.css</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* scss嵌套语法</span><br><span class="line">*/</span><br><span class="line">.top-nav &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">  right: 0; &#125;</span><br><span class="line">  .top-nav li &#123;</span><br><span class="line">    list-style: none;</span><br><span class="line">    height: 40px; &#125;</span><br><span class="line">  .top-nav a &#123;</span><br><span class="line">    text-decoration: none;</span><br><span class="line">    color: <span class="comment">#fff; &#125;</span></span><br><span class="line">    .top-nav a:hover &#123;</span><br><span class="line">      color: <span class="comment">#456; &#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="跳出嵌套-at-root"><a href="#跳出嵌套-at-root" class="headerlink" title="跳出嵌套@at-root"></a>跳出嵌套<code>@at-root</code></h3><p>使用<code>@at-root</code>命令可以跳出选择器嵌套，但是不能跳出<code>@media</code>和<code>@support</code>:</p>
-<p>这种写法在写动画样式的时候有利于区分动画的范围。</p>
-<p>转译前.scss文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* 跳出嵌套</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">.demo &#123;</span><br><span class="line"></span><br><span class="line">    animation: motion 3s infinite;</span><br><span class="line"></span><br><span class="line">    @at-root &#123;</span><br><span class="line">        @keyframes motion &#123;</span><br><span class="line">            from &#123;width: 0;&#125;</span><br><span class="line">            to &#123;width: 200px&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>转译后.css文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* 跳出嵌套</span><br><span class="line">*/</span><br><span class="line">.demo &#123;</span><br><span class="line">  animation: motion 3s infinite; &#125;</span><br><span class="line">@keyframes motion &#123;</span><br><span class="line">  from &#123;</span><br><span class="line">    width: 0; &#125;</span><br><span class="line">  to &#123;</span><br><span class="line">    width: 200px; &#125; &#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="Sass的混合"><a href="#Sass的混合" class="headerlink" title="Sass的混合"></a>Sass的<code>混合</code></h3><p>使用<code>@mixin</code>声明混合，可以传递参数。参数名以<code>$</code>符号开始，多个参数以逗号分开，也可以给参数设置默认值。<br>声明的<code>@mixin</code>通过<code>@include</code>来调用。</p>
-<p>转译前.scss文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* 混合</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">@mixin center-block &#123;</span><br><span class="line">    width: 960px;</span><br><span class="line">    margin: 0 auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">* 无参数mixin</span><br><span class="line">*/</span><br><span class="line">.demo &#123;</span><br><span class="line">    @include center-block;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@mixin opacity(<span class="variable">$opacity</span>:50) &#123;</span><br><span class="line">    opacity: <span class="variable">$opacity</span> / 100;</span><br><span class="line">    filter: alpha(opacity=<span class="variable">$opacity</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">* 无参数mixin</span><br><span class="line">*/</span><br><span class="line">.opacity &#123;</span><br><span class="line">    @include opacity; // 使用默认参数</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">* 有参数mixin</span><br><span class="line">*/</span><br><span class="line">.opacity-80 &#123;</span><br><span class="line">    @include opacity(80); // 传递参数</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>转译后.css文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* 混合</span><br><span class="line">*/</span><br><span class="line">/*</span><br><span class="line">* 无参数mixin</span><br><span class="line">*/</span><br><span class="line">.demo &#123;</span><br><span class="line">  width: 960px;</span><br><span class="line">  margin: 0 auto; &#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">* 无参数mixin</span><br><span class="line">*/</span><br><span class="line">.opacity &#123;</span><br><span class="line">  opacity: 0.5;</span><br><span class="line">  filter: alpha(opacity=50); &#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">* 有参数mixin</span><br><span class="line">*/</span><br><span class="line">.opacity-80 &#123;</span><br><span class="line">  opacity: 0.8;</span><br><span class="line">  filter: alpha(opacity=80); &#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="Sass的继承"><a href="#Sass的继承" class="headerlink" title="Sass的继承"></a>Sass的<code>继承</code></h3><p>选择器继承可以让选择器继承另一个选择器的所有样式，并<code>联合声明</code>。使用选择器的继承，需要使用关键词<code>@extend</code>，后面紧跟需要继承的选择器。</p>
-<p>.scss文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* 继承</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">.demo-jc1 &#123;</span><br><span class="line">    border: 1px solid <span class="comment">#fff;</span></span><br><span class="line">    font-size: 16px</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.demo-jc2 &#123;</span><br><span class="line">    @extend .demo-jc1;</span><br><span class="line">    font-size: 24px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>.css文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* 继承</span><br><span class="line">*/</span><br><span class="line">.demo-jc1, .demo-jc2 &#123;</span><br><span class="line">  border: 1px solid <span class="comment">#fff;</span></span><br><span class="line">  font-size: 16px; &#125;</span><br><span class="line"></span><br><span class="line">.demo-jc2 &#123;</span><br><span class="line">  font-size: 24px; &#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="Sass的占位选择器"><a href="#Sass的占位选择器" class="headerlink" title="Sass的占位选择器"></a>Sass的<code>占位选择器</code></h3><p>占位选择器使用<code>%</code>标识定义，通过<code>@extend</code>来调用。使用这个的好处是：在.scss文件中使用占位选择器，然后通过继承调用，转译后的.css文件只会解析出你<code>@extend</code>出来的样式，没有继承调用的样式不会在.css中呈现出来。</p>
-<p>.scss文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* 占位符</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">.demo-zw-false &#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">%demo-zw-true &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">%demo-zw1-true &#123;</span><br><span class="line">    width: 150px;</span><br><span class="line">    height: 100px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.demo-zw1 &#123;</span><br><span class="line">    @extend %demo-zw1-true;</span><br><span class="line">    border: 1px solid <span class="comment">#333;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>.css文件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* 占位符</span><br><span class="line">*/</span><br><span class="line">.demo-zw-false &#123;</span><br><span class="line">  width: 100px; &#125;</span><br><span class="line"></span><br><span class="line">.demo-zw1 &#123;</span><br><span class="line">  width: 150px;</span><br><span class="line">  height: 100px; &#125;</span><br><span class="line"></span><br><span class="line">.demo-zw1 &#123;</span><br><span class="line">  border: 1px solid <span class="comment">#333; &#125;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="Sass的运算"><a href="#Sass的运算" class="headerlink" title="Sass的运算"></a>Sass的<code>运算</code></h3><p>Sass可以对数值型的Value（如：数字、颜色、变量）进行加减乘除四则运算。<code>运算符前后必须要留一个空格</code>。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* 运算</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line"><span class="variable">$boxWidth</span>: 100px !default;</span><br><span class="line"></span><br><span class="line">.container-inner &#123;</span><br><span class="line">    width: <span class="variable">$boxWidth</span> / 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* 运算</span><br><span class="line">*/</span><br><span class="line">.container-inner &#123;</span><br><span class="line">  width: 50px; &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="sass中使用calc不能包含变量的问题"><a href="#sass中使用calc不能包含变量的问题" class="headerlink" title="sass中使用calc不能包含变量的问题"></a>sass中使用calc不能包含变量的问题</h3><p>下面这种写法在浏览器上显示无效：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.menu-container-right</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="built_in">calc</span>(100% - $menuContainerLeftWidth);</span><br><span class="line">    <span class="attribute">float</span>: right;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
-<p>在sass的calc中使用变量，必须对这个变量使用sass的<code>插值方法（#{$variable}）</code></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.menu-container-right</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="built_in">calc</span>(100% - #&#123;$menuContainerLeftWidth&#125;);</span><br><span class="line">    <span class="attribute">float</span>: right;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Sass</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Coding//" class="article-tag-list-link color2">Coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/04/Sass-Note/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1311,6 +1267,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Http</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Html/Css</a>
               </li>
              
@@ -1320,6 +1280,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Event事件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1336,6 +1300,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1356,6 +1324,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">逻辑运算符</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Event</a>
               </li>
             
             <div class="clearfix"></div>
