@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/3 | 一只小妖</title>
+  <title>React-Virtual-Dom算法 | 一只小妖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="就想安静的装个*">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一只小妖">
-<meta property="og:url" content="http://yoursite.com/archives/2018/03/index.html">
+  <meta name="description" content="React的virtual Dom React组件挂载：JSX/TSX ==&amp;gt;JavaScript对象==&amp;gt;真实DOM 无论是.jsx还是.tsx，都是先把组件中的render()方法返回的Html标签结构转化成JavaScript对象，生成一个虚拟的DOM树，然后经历一系列的逻辑操作后，使用ReactDOM.render()（import * as ReactDOM from ‘re">
+<meta name="keywords" content="React,Virtual-Dom">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React-Virtual-Dom算法">
+<meta property="og:url" content="http://yoursite.com/2018/07/03/React-Virtual-Dom算法/index.html">
 <meta property="og:site_name" content="一只小妖">
-<meta property="og:description" content="就想安静的装个*">
+<meta property="og:description" content="React的virtual Dom React组件挂载：JSX/TSX ==&amp;gt;JavaScript对象==&amp;gt;真实DOM 无论是.jsx还是.tsx，都是先把组件中的render()方法返回的Html标签结构转化成JavaScript对象，生成一个虚拟的DOM树，然后经历一系列的逻辑操作后，使用ReactDOM.render()（import * as ReactDOM from ‘re">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2018-07-03T07:23:22.746Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一只小妖">
-<meta name="twitter:description" content="就想安静的装个*">
+<meta name="twitter:title" content="React-Virtual-Dom算法">
+<meta name="twitter:description" content="React的virtual Dom React组件挂载：JSX/TSX ==&amp;gt;JavaScript对象==&amp;gt;真实DOM 无论是.jsx还是.tsx，都是先把组件中的render()方法返回的Html标签结构转化成JavaScript对象，生成一个虚拟的DOM树，然后经历一系列的逻辑操作后，使用ReactDOM.render()（import * as ReactDOM from ‘re">
   
     <link rel="alternative" href="/atom.xml" title="一只小妖" type="application/atom+xml">
   
@@ -159,52 +161,104 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-React-Virtual-Dom算法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/05/Node-Spider/" class="archive-article-date">
-  	<time datetime="2018-03-05T07:23:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/05/Node-Spider/">Node-Spiderr</a>
+    <h1 class="article-title" itemprop="name">
+      React-Virtual-Dom算法
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/07/03/React-Virtual-Dom算法/" class="archive-article-date">
+  	<time datetime="2018-07-03T07:17:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>React的virtual Dom</strong></p>
+<p>React组件挂载：<code>JSX/TSX</code> ==&gt;<code>JavaScript对象</code>==&gt;<code>真实DOM</code></p>
+<p>无论是<code>.jsx</code>还是<code>.tsx</code>，都是先把组件中的<code>render()</code>方法返回的<code>Html</code>标签结构转化成<code>JavaScript对象</code>，生成<br>一个虚拟的<code>DOM</code>树，然后经历一系列的逻辑操作后，使用<code>ReactDOM.render()</code>（import * as ReactDOM from ‘react-dom’）方法将虚拟的<code>DOM</code>转化为真实的<code>DOM</code>树。</p>
+<p>应用<code>Virtual DOM</code>算法的几个步骤：</p>
+<ol>
+<li>用JavaScript对象结构表示DOM树的结构，然后用这个树构建一个真正的DOM树，并插入到文档中。</li>
+<li>当状态变更的时候，重新构造一棵新的对象树（新的JavaScript树）。然后用新的树和旧的树进行比较，比较两棵树的差异</li>
+<li>把比较后的得到的差异应用到之前构造的真正的DOM树上，这样视图就更新了。</li>
+</ol>
+<p><strong>创建virtual Dom的目的：</strong></p>
+<p><em>相对于直接操作页面的DOM，直接操作JavaScript对象（虚拟Dom树）处理起来更快，而且更简单。</em></p>
+<p>通过对比缓存在内存中的新旧JavaScript对象树，我们可以获取到先后的差异，这样我么就可以针对这个明确的差异去修改对应的真实DOM结构，而不需要整体或者频繁的去改动真实的DOM结构。</p>
+<a id="more"></a>
+<p><strong>比较两棵虚拟DOM树的差异（DIFF算法）</strong></p>
+<p><em>具体的Diff算法原理不在此讨论</em></p>
+<p>DOM树的差异体现在对其操作上：</p>
+<ol>
+<li>替换掉原来的节点，<code>div</code> ==&gt; <code>span</code></li>
+<li>移动、删除、新增子节点</li>
+<li>修改节点的属性，比如修改<code>ClassName</code> </li>
+<li>对文本节点的文本内容修改</li>
+</ol>
+<p><strong>为什么要给节点添加唯一标识<code>key</code></strong>:</p>
+<p>进行react开发的时候，我们经常会在控制台看到未添加标识符<code>key</code>的警告。虽然大部分情况下，忽略该警告程序依旧<br>可以正常运行。但是给每个节点添加一个唯一的<code>key</code>，则会在程序代码运行性能上提高很多。需要说明的是这个<code>key</code><br>不是给开发者使用的，是给react应用<code>Virtual-Dom Diff算法</code>时应用的。</p>
+<p>针对列表节点的比较:</p>
+<p>同一层节点中插入某个节点，比如在<code>ABCDE</code>五个节点中插入一个<code>F</code>节点使其变为<code>ABCFDE</code>。如果没有给每个节点<br>绑定唯一的标识符<code>key</code>，那么更新过程则是将<code>D</code>变成<code>F</code>、<code>E</code>变成<code>D</code>、最后再新增一个<code>E</code>。可以看到，React会逐个对<br>节点进行更新，转换到目标节点，最后插入新增的节点，这里面涉及到的DOM操作非常多。而如果给每个节点绑定一<br>个唯一的标识符<code>key</code>，那么React就能够找到正确的位置去插入新的节点。</p>
+<p>同一层次的节点顺序调换，如果没有提供<code>key</code>，那么这里的节点顺序调整则是一个完全删除然后重建的过程。如果提供<br>了<code>key</code>，那么React就能直接定位到正确的节点，从而进行顺序的调换及更新。</p>
+<p>上面涉及到有无<code>key</code>的组件变化情况，可以通过组件进入不同的生命周期观察到。这也表明组件的生命周期与<br><code>Virtual-Dom Diff算法</code>是联系在一起的。</p>
+<p><strong>References</strong></p>
+<ul>
+<li><a href="https://github.com/livoras/blog/issues/13" target="_blank" rel="noopener">如何实现一个Virtual Dom算法</a></li>
+<li><a href="http://www.infoq.com/cn/articles/react-dom-diff" target="_blank" rel="noopener">React DOM Diff算法解析</a></li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Node</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Virtual-Dom</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -217,17 +271,104 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/03/React-Virtual-Dom算法/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/07/03/React-HigherOrderComponent/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">React-HigherOrderComponent</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -251,8 +392,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

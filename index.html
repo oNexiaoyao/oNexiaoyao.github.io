@@ -161,6 +161,199 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-React-Virtual-Dom算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/03/React-Virtual-Dom算法/">React-Virtual-Dom算法</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/03/React-Virtual-Dom算法/" class="archive-article-date">
+  	<time datetime="2018-07-03T07:17:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>React的virtual Dom</strong></p>
+<p>React组件挂载：<code>JSX/TSX</code> ==&gt;<code>JavaScript对象</code>==&gt;<code>真实DOM</code></p>
+<p>无论是<code>.jsx</code>还是<code>.tsx</code>，都是先把组件中的<code>render()</code>方法返回的<code>Html</code>标签结构转化成<code>JavaScript对象</code>，生成<br>一个虚拟的<code>DOM</code>树，然后经历一系列的逻辑操作后，使用<code>ReactDOM.render()</code>（import * as ReactDOM from ‘react-dom’）方法将虚拟的<code>DOM</code>转化为真实的<code>DOM</code>树。</p>
+<p>应用<code>Virtual DOM</code>算法的几个步骤：</p>
+<ol>
+<li>用JavaScript对象结构表示DOM树的结构，然后用这个树构建一个真正的DOM树，并插入到文档中。</li>
+<li>当状态变更的时候，重新构造一棵新的对象树（新的JavaScript树）。然后用新的树和旧的树进行比较，比较两棵树的差异</li>
+<li>把比较后的得到的差异应用到之前构造的真正的DOM树上，这样视图就更新了。</li>
+</ol>
+<p><strong>创建virtual Dom的目的：</strong></p>
+<p><em>相对于直接操作页面的DOM，直接操作JavaScript对象（虚拟Dom树）处理起来更快，而且更简单。</em></p>
+<p>通过对比缓存在内存中的新旧JavaScript对象树，我们可以获取到先后的差异，这样我么就可以针对这个明确的差异去修改对应的真实DOM结构，而不需要整体或者频繁的去改动真实的DOM结构。</p>
+        
+          <a class="article-more-a" href="/2018/07/03/React-Virtual-Dom算法/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Virtual-Dom</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Coding//" class="article-tag-list-link color2">Coding</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/03/React-Virtual-Dom算法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-React-HigherOrderComponent" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/03/React-HigherOrderComponent/">React-HigherOrderComponent</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/03/React-HigherOrderComponent/" class="archive-article-date">
+  	<time datetime="2018-07-03T07:13:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>阅读之前，首先要问下自己：前端为什么要进行组件化开发</strong></p>
+<p><strong>什么是高阶组件？</strong></p>
+<p>高阶组件就是一个<code>函数</code>，该函数的特点是需要给它传递一个组件作为参数（参数还可以包含其他的数据），它会返回一个新的组件。</p>
+<p>高阶组件定义示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 默认导出了一个函数，该函数有两个参数，第一个参数是一个组件，第二个是一个字符串</span></span><br><span class="line"><span class="comment">//  该函数就是一个高阶组件</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (WrappedComponent, name) =&gt; &#123;</span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">NewComponent</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span> () &#123;</span><br><span class="line">      <span class="keyword">super</span>()</span><br><span class="line">      <span class="keyword">this</span>.state = &#123; <span class="attr">data</span>: <span class="literal">null</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentWillMount () &#123;</span><br><span class="line">      <span class="keyword">let</span> data = localStorage.getItem(name)</span><br><span class="line">      <span class="keyword">this</span>.setState(&#123; data &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render () &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">WrappedComponent</span> <span class="attr">data</span>=<span class="string">&#123;this.state.data&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">  return NewComponent</span></span><br><span class="line"><span class="xml">&#125;</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018/07/03/React-HigherOrderComponent/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Coding//" class="article-tag-list-link color2">Coding</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/03/React-HigherOrderComponent/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-React笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -975,203 +1168,6 @@
 
 
   
-    <article id="post-JavaScrpt基础知识(二)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/01/JavaScrpt基础知识(二)/">JavaScrpt基础知识(二)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/01/JavaScrpt基础知识(二)/" class="archive-article-date">
-  	<time datetime="2018-02-01T07:58:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="浏览器、HTML、CSS、JS"><a href="#浏览器、HTML、CSS、JS" class="headerlink" title="浏览器、HTML、CSS、JS"></a>浏览器、HTML、CSS、JS</h3><h4 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h4><ol>
-<li>IE，内核：Trident(IE内核)</li>
-<li>Goole，内核：webkit</li>
-<li>Firefox, 内核：Gecko  </li>
-</ol>
-<h4 id="cookies，sessionStorage-和-localStorage"><a href="#cookies，sessionStorage-和-localStorage" class="headerlink" title="cookies，sessionStorage 和 localStorage"></a><a href="http://blog.csdn.net/zhouziyu2011/article/details/58591829" target="_blank" rel="noopener">cookies，sessionStorage 和 localStorage</a></h4><ol>
-<li>都是保存在浏览器端，用来存储数据。</li>
-<li>cookie可以在浏览器和服务器端来回传递，存储大小不能超高4k。</li>
-<li>sessionStorage 和 localStorage在浏览器端存储数据，数据仅在本地保存。存储数据可以很大，达到5M或更多</li>
-<li>localStorage可以永久在客户端存储数据，关闭浏览器，数据不会丢失。</li>
-<li>sessionStorage关闭浏览器，数据丢失。</li>
-</ol>
-        
-          <a class="article-more-a" href="/2018/02/01/JavaScrpt基础知识(二)/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Coding//" class="article-tag-list-link color2">Coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/01/JavaScrpt基础知识(二)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript基础知识(一)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/31/JavaScript基础知识(一)/">JavaScript基础知识(一)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/31/JavaScript基础知识(一)/" class="archive-article-date">
-  	<time datetime="2018-01-31T06:30:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="javascript基本数据类型？javascript的typeof返回哪些数据类型"><a href="#javascript基本数据类型？javascript的typeof返回哪些数据类型" class="headerlink" title="javascript基本数据类型？javascript的typeof返回哪些数据类型"></a>javascript基本数据类型？javascript的typeof返回哪些数据类型</h3><p>javascript基本数据类型（六种）：null、undefined、object、string、number、boolean</p>
-<p>javascript的typeof返回哪些数据类型(六种)：undefined、string、number、boolean、object、function</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(typeof <span class="function"><span class="title">function</span></span>()&#123;&#125;)          // 返回字符串<span class="string">"function"</span> </span><br><span class="line">console.log(typeof null)          // 返回字符串<span class="string">"object"</span></span><br></pre></td></tr></table></figure>
-<h3 id="强制类型转换和隐式类型转换"><a href="#强制类型转换和隐式类型转换" class="headerlink" title="强制类型转换和隐式类型转换"></a>强制类型转换和隐式类型转换</h3><p>强制类型转换：parseInt、parseFloat、Number()、String()、Boolean()</p>
-<p>隐式类型转换：<a href="https://www.cnblogs.com/yugege/p/5277883.html" target="_blank" rel="noopener">参考资料</a></p>
-        
-          <a class="article-more-a" href="/2018/01/31/JavaScript基础知识(一)/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Coding//" class="article-tag-list-link color2">Coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/31/JavaScript基础知识(一)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1304,6 +1300,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Virtual-Dom</a>
               </li>
              
               <li class="article-tag-list-item">

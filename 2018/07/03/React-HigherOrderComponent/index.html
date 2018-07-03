@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/3 | 一只小妖</title>
+  <title>React-HigherOrderComponent | 一只小妖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="就想安静的装个*">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一只小妖">
-<meta property="og:url" content="http://yoursite.com/archives/2018/03/index.html">
+  <meta name="description" content="阅读之前，首先要问下自己：前端为什么要进行组件化开发 什么是高阶组件？ 高阶组件就是一个函数，该函数的特点是需要给它传递一个组件作为参数（参数还可以包含其他的数据），它会返回一个新的组件。 高阶组件定义示例： 12345678910111213141516171819202122import React, &amp;#123; Component &amp;#125; from &apos;react&apos;// 默认导出了一个">
+<meta name="keywords" content="React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React-HigherOrderComponent">
+<meta property="og:url" content="http://yoursite.com/2018/07/03/React-HigherOrderComponent/index.html">
 <meta property="og:site_name" content="一只小妖">
-<meta property="og:description" content="就想安静的装个*">
+<meta property="og:description" content="阅读之前，首先要问下自己：前端为什么要进行组件化开发 什么是高阶组件？ 高阶组件就是一个函数，该函数的特点是需要给它传递一个组件作为参数（参数还可以包含其他的数据），它会返回一个新的组件。 高阶组件定义示例： 12345678910111213141516171819202122import React, &amp;#123; Component &amp;#125; from &apos;react&apos;// 默认导出了一个">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2018-07-03T07:24:30.359Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一只小妖">
-<meta name="twitter:description" content="就想安静的装个*">
+<meta name="twitter:title" content="React-HigherOrderComponent">
+<meta name="twitter:description" content="阅读之前，首先要问下自己：前端为什么要进行组件化开发 什么是高阶组件？ 高阶组件就是一个函数，该函数的特点是需要给它传递一个组件作为参数（参数还可以包含其他的数据），它会返回一个新的组件。 高阶组件定义示例： 12345678910111213141516171819202122import React, &amp;#123; Component &amp;#125; from &apos;react&apos;// 默认导出了一个">
   
     <link rel="alternative" href="/atom.xml" title="一只小妖" type="application/atom+xml">
   
@@ -159,52 +161,92 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-React-HigherOrderComponent" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/05/Node-Spider/" class="archive-article-date">
-  	<time datetime="2018-03-05T07:23:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/05/Node-Spider/">Node-Spiderr</a>
+    <h1 class="article-title" itemprop="name">
+      React-HigherOrderComponent
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/07/03/React-HigherOrderComponent/" class="archive-article-date">
+  	<time datetime="2018-07-03T07:13:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>阅读之前，首先要问下自己：前端为什么要进行组件化开发</strong></p>
+<p><strong>什么是高阶组件？</strong></p>
+<p>高阶组件就是一个<code>函数</code>，该函数的特点是需要给它传递一个组件作为参数（参数还可以包含其他的数据），它会返回一个新的组件。</p>
+<p>高阶组件定义示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 默认导出了一个函数，该函数有两个参数，第一个参数是一个组件，第二个是一个字符串</span></span><br><span class="line"><span class="comment">//  该函数就是一个高阶组件</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (WrappedComponent, name) =&gt; &#123;</span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">NewComponent</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span> () &#123;</span><br><span class="line">      <span class="keyword">super</span>()</span><br><span class="line">      <span class="keyword">this</span>.state = &#123; <span class="attr">data</span>: <span class="literal">null</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentWillMount () &#123;</span><br><span class="line">      <span class="keyword">let</span> data = localStorage.getItem(name)</span><br><span class="line">      <span class="keyword">this</span>.setState(&#123; data &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render () &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">WrappedComponent</span> <span class="attr">data</span>=<span class="string">&#123;this.state.data&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">  return NewComponent</span></span><br><span class="line"><span class="xml">&#125;</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p><strong>为什么要使用高阶组件？</strong></p>
+<p>高阶组件的作用：为了组件间的代码复用。</p>
+<p>组件可能有着某些相同的逻辑，把这些逻辑抽离出来，放到高阶组件中进行复用。高阶组件内部的包装组件和被包装组件之间通过<code>props</code>传递数据。</p>
+<p><strong>如何使用高阶组件？</strong></p>
+<p>高阶组件使用示例：</p>
+<p>InputWithUserName的功能需求是挂载的时候从localStorage里面加载username字段作为<code>&lt;input /&gt;</code>的value值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> wrapWithLoadData <span class="keyword">from</span> <span class="string">'./wrapWithLoadData'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">InputWithUserName</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render () &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">value</span>=<span class="string">&#123;this.props.data&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">//  具体的做法：先定义一个非常简单的InputWithUserName，然后把这个组件和username</span></span><br><span class="line"><span class="xml">//  传给wrapWithLoadData,wrapWithLoadData会返回一个新的组件，然后我们用这个新的组件</span></span><br><span class="line"><span class="xml">//  覆盖原来的InputWithUserName，然后再导出去模块</span></span><br><span class="line"><span class="xml">InputWithUserName = wrapWithLoadData(InputWithUserName, 'username')</span></span><br><span class="line"><span class="xml">export default InputWithUserName</span></span><br></pre></td></tr></table></figure>
+<p>最终调用的该组件实际是用了被加工过的组件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> InputWithUserName <span class="keyword">from</span> <span class="string">'./InputWithUserName'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render () &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        用户名：&lt;InputWithUserName /&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>新的需求：另外一个文本输入框组件，它需要从LocalStorage加载content字段的数据。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> wrapWithLoadData <span class="keyword">from</span> <span class="string">'./wrapWithLoadData'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TextareaWithContent</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render () &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">value</span>=<span class="string">&#123;this.props.data&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml">// 应用之前定义好的高阶组件，只需要传递一个不同的参数</span></span><br><span class="line"><span class="xml">TextareaWithContent = wrapWithLoadData(TextareaWithContent, 'content')</span></span><br><span class="line"><span class="xml">export default TextareaWithContent</span></span><br></pre></td></tr></table></figure>
+<p>高阶组件使用分析：</p>
+<p>上面使用的两个组件<code>InputWithUserName</code>和<code>TextareaWithContent</code>在需求上有一个相同的逻辑：都是在<br>挂载阶段从LocalStorage中加载特定字段数据。</p>
+<p>如果不使用高阶组件，我们可能是针对每一个组件都加上<code>componentWillMount</code>生命周期，然后在里面调用<br>LocalStorage。后期假设需求改成使用aja获取而不是从LocalStorage获取，不使用高阶组件的话我们需要针对<br>每一个组件进行逻辑代码的修改，而使用高阶组件的话只需要修改高阶组件里面的逻辑，然后修改下引入的<br>高阶组件（包装函数）的名称就行了。</p>
+<p>使用高阶组件，就是把这些组件里面的相同逻辑抽离出来放入到一个包裹函数中。使用不同组件的时候都调用该高阶<br>组件实现其已经封装好的功能，而不需要自己单独去实现。这样减少了开发单独组件所需的代码，充分复用了逻辑<br>代码。</p>
+<p><strong>References</strong></p>
+<ul>
+<li><a href="http://huziketang.mangojuice.top/books/react/lesson28" target="_blank" rel="noopener">ReactJS 小书</a></li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Node</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -217,17 +259,113 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/03/React-HigherOrderComponent/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/07/03/React-Virtual-Dom算法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          React-Virtual-Dom算法
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018/06/22/React笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">React笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -251,8 +389,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
