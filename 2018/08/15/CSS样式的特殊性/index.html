@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 面试 | 一只小妖</title>
+  <title>CSS样式的特殊性 | 一只小妖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="就想安静的装个*">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一只小妖">
-<meta property="og:url" content="http://yoursite.com/tags/面试/index.html">
+  <meta name="description" content="特殊性、继承、层叠  特殊性   同一个元素可以通过多种方式选取到，不同的选取方式会应用不同的样式规则。那么当应用的样式规则存在冲突的时候，肯定需要评出一个优先级最高的规则来应用（毕竟一种元素最终只能呈现一种规则的样式）。对于每个规则，用户代理会计算选择器的特殊性，并将这个特殊性附加到规则中的各个声明，最后拥有最高特殊性的声明会在冲突中胜出。   特殊性值表述为4个部分，如：0，0，0，0。一个选">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS样式的特殊性">
+<meta property="og:url" content="http://yoursite.com/2018/08/15/CSS样式的特殊性/index.html">
 <meta property="og:site_name" content="一只小妖">
-<meta property="og:description" content="就想安静的装个*">
+<meta property="og:description" content="特殊性、继承、层叠  特殊性   同一个元素可以通过多种方式选取到，不同的选取方式会应用不同的样式规则。那么当应用的样式规则存在冲突的时候，肯定需要评出一个优先级最高的规则来应用（毕竟一种元素最终只能呈现一种规则的样式）。对于每个规则，用户代理会计算选择器的特殊性，并将这个特殊性附加到规则中的各个声明，最后拥有最高特殊性的声明会在冲突中胜出。   特殊性值表述为4个部分，如：0，0，0，0。一个选">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2018-08-15T06:25:45.271Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一只小妖">
-<meta name="twitter:description" content="就想安静的装个*">
+<meta name="twitter:title" content="CSS样式的特殊性">
+<meta name="twitter:description" content="特殊性、继承、层叠  特殊性   同一个元素可以通过多种方式选取到，不同的选取方式会应用不同的样式规则。那么当应用的样式规则存在冲突的时候，肯定需要评出一个优先级最高的规则来应用（毕竟一种元素最终只能呈现一种规则的样式）。对于每个规则，用户代理会计算选择器的特殊性，并将这个特殊性附加到规则中的各个声明，最后拥有最高特殊性的声明会在冲突中胜出。   特殊性值表述为4个部分，如：0，0，0，0。一个选">
   
     <link rel="alternative" href="/atom.xml" title="一只小妖" type="application/atom+xml">
   
@@ -159,52 +161,104 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-CSS样式的特殊性" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS样式的特殊性
+    </h1>
+  
+
+        
+        <a href="/2018/08/15/CSS样式的特殊性/" class="archive-article-date">
+  	<time datetime="2018-08-15T06:23:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-15</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>特殊性、继承、层叠</strong></p>
+<ul>
+<li><p>特殊性</p>
+<p>  同一个元素可以通过多种方式选取到，不同的选取方式会应用不同的样式规则。那么当应用的样式规则存在冲突的时候，肯定需要评出一个优先级最高的规则来应用（毕竟一种元素最终只能呈现一种规则的样式）。对于每个规则，用户代理会计算选择器的特殊性，并将这个特殊性附加到规则中的各个声明，最后拥有最高特殊性的声明会在冲突中胜出。</p>
+<p>  特殊性值表述为4个部分，如：0，0，0，0。一个选择器的具体特殊性如下确定：</p>
+<ul>
+<li>对于选择器中给定的各个ID属性值，加0，1，0，0。</li>
+<li>对于选择器中给定的各个类属性值、属性选择或伪类，加0，0，1，0。</li>
+<li>对于选择其中给定的各个元素和伪元素，加0，0，0，1。伪元素是否有特殊性？在这个方面CSS2有些自相矛盾，不过CSS2.1很清楚地指出，伪元素有特殊性，而且特殊性为0，0，0，1。</li>
+<li><p>结合符和通配选择器对特殊性没有任何贡献</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">h1 &#123; color: red; &#125;   /* 0,0,0,1 */</span><br><span class="line">body h1 &#123; color: green; &#125;   /* 0,0,0,2 (winner) */</span><br><span class="line"></span><br><span class="line">h2.grape &#123; color: purple; &#125;   /* 0,0,1,1 (winner) */</span><br><span class="line">h2 &#123; color: silver; &#125;   /* 0,0,0,1 */</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>针对比较复杂点的规则，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h1 &#123; color: silver; background: black; &#125;</span><br></pre></td></tr></table></figure>
+<p>由于特殊性的缘故，用户代理必须相应的处理这个规则，将其”解组”为单独的规则。然后针对单独的规则进行特殊性值的比较。<br>因此，前面的例子将变成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">h1 &#123; color: silver; &#125;</span><br><span class="line">h1 &#123; background: black; &#125;</span><br></pre></td></tr></table></figure>
+<p><code>通配选择器</code>对一个选择器的特殊性没有贡献。并不是说它没有特殊性，而是因为她的特殊性为0，0，0，0。这就意味着如果一个选择器中包含通配选择器和其他选择器，该选择器的特殊性不会因通配选择器的出现而改变。下面两个选择器的特殊性完全相同：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">div p &#123;&#125;  /* 0,0,0,2 */</span><br><span class="line">body * strong /* 0,0,0,2 */</span><br></pre></td></tr></table></figure>
+<p>相比之下，<code>结合符</code>则根本没有特殊性，甚至连0特殊性都没有。因此，它们对选择器的总特殊性没有任何影响。</p>
+<p><code>ID选择器</code>和指定<code>ID属性</code>的属性选择器在特殊性上有所不同。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">html &gt; body table tr[id=&quot;totals&quot;] td ul &gt; li &#123; color: maroon; &#125;  /* 0,0,1,7 */</span><br><span class="line">li#answer &#123;  color: navy; &#125;   /* 0,1,0,1 (winner) */</span><br></pre></td></tr></table></figure>
+<p>上面的例子中，第二个规则中的ID选择器（#answer）为选择器的总特殊性贡献了0,1,0,0。而在第一个规则中，属性选择器（[id = ‘totals’]）只对总特殊性贡献了0，0，1，0。因此，给定以下规则，id 为meadow的元素将变成绿色：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#meadow &#123; color: green; &#125;  /* 0,1,0,0 */</span><br><span class="line">*[id=&quot;meadow&quot;] &#123;color: red;&#125;   /* 0,0,1,0 */</span><br></pre></td></tr></table></figure>
+<p>上面所涉及到的元素的特殊性都是以0开头的特殊性，我们可能会好奇为什么会有这些特殊性，第一个非0的情况会是因为什么。</p>
+<p>一般的，第一个0是为内联样式声明保留的，内联样式比其他声明的特殊性都高。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">h1 &#123; color: red: &#125;  /* 0,0,0,1 */</span><br><span class="line">&lt;h1 style=&quot;color: green&quot;&gt;the meadow party&lt;/h1&gt;  /* 1,0,0,0 */</span><br></pre></td></tr></table></figure>
+<p>上面这个规则应用到h1元素，根据特殊性的计算方式h1的文本还将是绿色。</p>
+<p><code>重要声明</code>，某个声明非常重要，我们可以在这些声明的结束分号之前插入 !important来标识。重要声明的优先级比任何一个非重要性声明的特殊性要高。</p>
+</li>
+</ul>
+</li>
+<li><p>继承</p>
+</li>
+<li>层叠</li>
+</ul>
+<p><strong>以上有关样式的知识来自于<code>CSS权威指南(第三版)</code></strong></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/01/JavaScrpt基础知识(二)/" class="archive-article-date">
-  	<time datetime="2018-02-01T07:58:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/01/JavaScrpt基础知识(二)/">JavaScrpt基础知识(二)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -217,123 +271,104 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/15/CSS样式的特殊性/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/31/JavaScript基础知识(一)/" class="archive-article-date">
-  	<time datetime="2018-01-31T06:30:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-31</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/03/奇怪的滚动条/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">奇怪的滚动条</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/31/JavaScript基础知识(一)/">JavaScript基础知识(一)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Coding//" class="article-tag-list-link color2">Coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/16/Html-Css-Note(一)/" class="archive-article-date">
-  	<time datetime="2018-01-16T14:12:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/16/Html-Css-Note(一)/">Html-Css-Note(一)</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Html/Css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Coding//" class="article-tag-list-link color2">Coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -357,9 +392,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
