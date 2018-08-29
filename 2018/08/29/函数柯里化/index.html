@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>一只小妖</title>
+  <title>函数柯里化 | 一只小妖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="就想安静的装个*">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一只小妖">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+  <meta name="description" content="什么是柯里化？  在计算机科学中，柯里化（Currying）是把接收多个参数的函数换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数且返回结果的新函数的技术。这个技术由 Christopher Strachey 以逻辑学家 Haskell Curry 命名的，尽管它是 Moses Schnfinkel 和 Gottlob Frege 发明的。  简单的理解就是：原本一个函数">
+<meta name="keywords" content="JavaScript,函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数柯里化">
+<meta property="og:url" content="http://yoursite.com/2018/08/29/函数柯里化/index.html">
 <meta property="og:site_name" content="一只小妖">
-<meta property="og:description" content="就想安静的装个*">
+<meta property="og:description" content="什么是柯里化？  在计算机科学中，柯里化（Currying）是把接收多个参数的函数换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数且返回结果的新函数的技术。这个技术由 Christopher Strachey 以逻辑学家 Haskell Curry 命名的，尽管它是 Moses Schnfinkel 和 Gottlob Frege 发明的。  简单的理解就是：原本一个函数">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2018-08-29T02:24:13.481Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一只小妖">
-<meta name="twitter:description" content="就想安静的装个*">
+<meta name="twitter:title" content="函数柯里化">
+<meta name="twitter:description" content="什么是柯里化？  在计算机科学中，柯里化（Currying）是把接收多个参数的函数换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数且返回结果的新函数的技术。这个技术由 Christopher Strachey 以逻辑学家 Haskell Curry 命名的，尽管它是 Moses Schnfinkel 和 Gottlob Frege 发明的。  简单的理解就是：原本一个函数">
   
     <link rel="alternative" href="/atom.xml" title="一只小妖" type="application/atom+xml">
   
@@ -159,36 +161,86 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-JavaScript立即执行函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-函数柯里化" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/21/JavaScript立即执行函数/">JavaScript立即执行函数</a>
+    <h1 class="article-title" itemprop="name">
+      函数柯里化
     </h1>
   
 
         
-        <a href="/2017/12/21/JavaScript立即执行函数/" class="archive-article-date">
-  	<time datetime="2017-12-21T11:59:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-21</time>
+        <a href="/2018/08/29/函数柯里化/" class="archive-article-date">
+  	<time datetime="2018-08-29T02:22:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="JavaScript函数定义、立即执行函数"><a href="#JavaScript函数定义、立即执行函数" class="headerlink" title="JavaScript函数定义、立即执行函数"></a>JavaScript函数定义、立即执行函数</h2><p>jquery源码框架<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">window,undefined</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//jquery..</span></span><br><span class="line">&#125;)(<span class="built_in">window</span>)</span><br></pre></td></tr></table></figure></p>
-<p>编程常遇到的问题：当你前面写的代码中定义了一个变量，后面又定义了一个同名的变量，结果两个变量的作用各不相同。那么后定义的那个变量就将前面定义的变量给覆盖了，造成代码错误。或者和别人合作，别人定义的同名变量覆盖你的变量。</p>
-<p>立即执行函数的作用：类似一个沙箱，构造了一个作用域，将你定义的变量放到这个沙箱中使之成为一个局部变量，从而避免暴露在全局环境下造成全局变量的污染。</p>
-        
-          <a class="article-more-a" href="/2017/12/21/JavaScript立即执行函数/#more">more >></a>
-        
+        <p><strong>什么是柯里化？</strong></p>
+<blockquote>
+<p>在计算机科学中，柯里化（Currying）是把接收多个参数的函数换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数且返回结果的新函数的技术。这个技术由 Christopher Strachey 以逻辑学家 Haskell Curry 命名的，尽管它是 Moses Schnfinkel 和 Gottlob Frege 发明的。</p>
+</blockquote>
+<p>简单的理解就是：原本一个函数是被写成可以接受多个参数的形式，现在将其改写成每次接受一个参数（按照之前传参的顺序）的函数形式，这里需要处理的是如何存储每次传参后处理得到的结果以及如何返回一个函数进而能使后一个传进来的参数能继续执行下去。</p>
+<p>代码上示意：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f(x,y,z) -&gt; f(x)(y)(z)</span><br></pre></td></tr></table></figure>
+<p><strong>为什么对函数进行柯里化</strong></p>
+<ul>
+<li>固定易变因素（比如this）</li>
+<li>可以实现对众多子功能的开关把控<a id="more"></a>
+<strong>如何对函数进行柯里化</strong></li>
+</ul>
+<p>关键点：</p>
+<ul>
+<li>易变因素、参数的处理</li>
+<li>如果传入的参数也是函数，就变成了高阶函数</li>
+<li>函数的返回结果是 return 一个函数形成一个闭包</li>
+</ul>
+<p><strong>实现示例</strong></p>
+<ul>
+<li>Count</li>
+</ul>
+<p>实现一个简单的计数器功能，使用柯里化函数，不过每次传的参数为空的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> count = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> _total = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> _count = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (_total &lt; <span class="number">20</span>) &#123;</span><br><span class="line">            _total += <span class="number">1</span>;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'total:'</span>, _total);</span><br><span class="line">            <span class="keyword">return</span> _count;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'时间已到，计数停止'</span>);</span><br><span class="line">            clearInterval(countTimer);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _count;</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> countTimer = setInterval(count(), <span class="number">1000</span>);</span><br><span class="line"><span class="comment">// 具体执行过程如下形式</span></span><br><span class="line"><span class="comment">// count()()()...;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>固定易变因素</li>
+</ul>
+<p>柯里化特性决定了它的应用场景。提前把易变因素，传参固定下来，生成一个更明确的应用函数。最典型的代表应用，是 bind  函数用以固定 this 这个易变对象。<a href="https://www.cnblogs.com/heshan1992/p/6667596.html" target="_blank" rel="noopener">Bind</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.bind = <span class="function"><span class="keyword">function</span>(<span class="params">context</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> _this = <span class="keyword">this</span>;</span><br><span class="line">    <span class="comment">// arguments不是数组，只是类数组对象，使用 Array.prototype.slice可以将具有 length 属性</span></span><br><span class="line">    <span class="comment">// 的对象转换为真正的数组。</span></span><br><span class="line">    <span class="comment">// fun.call(obj，param1...)的用法是将方法fun应用到obj对象上，那么fun的上下文执行环境</span></span><br><span class="line">    <span class="comment">// 就是obj，而后面的参数其实是是根据fun方法来的（可以理解是继承fun方法的参数吧）</span></span><br><span class="line">    <span class="comment">// 这里这样使用是截取类数组对象 arguments 下标从1开始的数据并转换成数组对象</span></span><br><span class="line">    <span class="keyword">var</span> _args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// var _innerArgs = Array.prototype.slice.call(arguments);</span></span><br><span class="line">        <span class="comment">// var _finalArgs = args.concat(innerArgs);</span></span><br><span class="line">        <span class="comment">// return _this.apply(context, finalArgs);</span></span><br><span class="line">        <span class="comment">// 上面三行的代码等同于下面这一行代码</span></span><br><span class="line">        <span class="keyword">return</span> _this.apply(context, _args.concat(<span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>)))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Hello, '</span> + name);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 延迟三秒后执行函数，直接使用hello('man')不能延迟执行</span></span><br><span class="line">setTimeout(hello.bind(<span class="keyword">this</span>, <span class="string">'man'</span>), <span class="number">3000</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>参考链接</strong></p>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/GEHL3jarDdAAcr5tQGjmDg" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/GEHL3jarDdAAcr5tQGjmDg</a></li>
+<li><a href="https://www.cnblogs.com/pigtail/p/3447660.html" target="_blank" rel="noopener">https://www.cnblogs.com/pigtail/p/3447660.html</a></li>
+</ul>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -215,7 +267,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/coding//" class="article-tag-list-link color2">coding</a>
+        			<a href="/categories/Coding//" class="article-tag-list-link color2">Coding</a>
         		</li>
       		
 		</ul>
@@ -223,16 +275,75 @@
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/21/JavaScript立即执行函数/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/29/函数柯里化/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/08/15/CSS样式的特殊性/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS样式的特殊性</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -252,193 +363,14 @@
 
 
 
-
-  
-    <article id="post-windows-shell" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/20/windows-shell/">windows-shell</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/20/windows-shell/" class="archive-article-date">
-  	<time datetime="2017-12-20T01:30:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="使用windows命令行笔记"><a href="#使用windows命令行笔记" class="headerlink" title="使用windows命令行笔记"></a>使用windows命令行笔记</h2><h3 id="进入命令行界面"><a href="#进入命令行界面" class="headerlink" title="进入命令行界面"></a>进入命令行界面</h3><p>直接在任务栏的搜索框输入<code>cmd</code>回车</p>
-<h3 id="进入某个磁盘"><a href="#进入某个磁盘" class="headerlink" title="进入某个磁盘"></a>进入某个磁盘</h3><p>在出现的命令行中箭头后直接输入要进入的盘符并加上<code>:</code>然后回车。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator&gt;F：</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/12/20/windows-shell/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">windows-shell</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/coding//" class="article-tag-list-link color2">coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/20/windows-shell/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hexo-note" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/11/hexo-note/">Hexo结合Github搭建博客</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/11/hexo-note/" class="archive-article-date">
-  	<time datetime="2017-12-11T07:57:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g hexo-cli</span><br></pre></td></tr></table></figure>
-<h3 id="创建并初始化hexo"><a href="#创建并初始化hexo" class="headerlink" title="创建并初始化hexo"></a>创建并初始化hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm init &lt;folder&gt;</span><br><span class="line"><span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">npm i</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/12/11/hexo-note/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Blog</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/coding//" class="article-tag-list-link color2">coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/11/hexo-note/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -462,8 +394,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
