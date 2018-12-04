@@ -161,6 +161,107 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-AsynchronousCoding" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/04/AsynchronousCoding/">AsynchronousCoding</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/04/AsynchronousCoding/" class="archive-article-date">
+  	<time datetime="2018-12-04T07:46:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>阅读本篇文章之前一定要明白异步解决方案和 http 的关系。异步是异步，http 是http。http 请求是一个异步的过程，而异步并不一定就和 http 请求联系在一起。所以不要提起异步就默认为就是 ajax请求数据。</em></p>
+<p><strong>Promise</strong></p>
+<p>Promise 对象用于表示一个异步操作的最终状态（玩成或失败），以及其返回的值。</p>
+<p>看下控制台输出的 Promise 对象信息：</p>
+<p><img src="https://github.com/oNexiaoyao/BlogSource/blob/master/images/promise.png?raw=true" alt=""></p>
+<p>Promise 的构造函数接受一个函数作为参数。传入的函数参数可以有两个： resolve 和 reject。resolve 是将 Promise 从 pending 状态置为 fulfilled 状态。 reject 是将 Promise 状态从 pending 置为 rejected 状态。我们可以简单的理解成：resolve 表示异步操作成功后的回调函数， reject 表示异步操作失败后的回调函数。</p>
+<p>Promise 最直接的好处就是链式调用。</p>
+        
+          <a class="article-more-a" href="/2018/12/04/AsynchronousCoding/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Blog</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Promise</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Async/Await</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Coding//" class="article-tag-list-link color2">Coding</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/04/AsynchronousCoding/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-函数柯里化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1039,101 +1140,6 @@
 
 
   
-    <article id="post-HTTP协议-Options方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/22/HTTP协议-Options方法/">HTTP协议-Options方法</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/22/HTTP协议-Options方法/" class="archive-article-date">
-  	<time datetime="2018-06-22T01:22:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>常见的web请求中使用到的http请求方法：get、post、put、delete</p>
-<p>发生的场景：</p>
-<p>公司新项目实现前后端分离后，某天调试页面一个数据请求接口，一直报403的错误。用fiddler抓包分析，发现该接口竟然是Options请求（请求方法中使用的是get谓词），却没有真正的发送期待中的get请求。 Options是什么鬼？之前开发一直没有遇到过。。后来问了下同事，说是这是由于跨域请求引起的。。</p>
-<p>查找资料获得：</p>
-<p>HTTP权威指南对Options方法的解释：</p>
-<blockquote>
-<p>OPTIONS方法请求web服务器告知其支持的各种功能。可以询问服务器通常支持哪些方法，或者对某些特殊资源支持哪些方法。（有些服务器可能只支持对一些特殊类型的对象使用特定的操作）</p>
-</blockquote>
-<p>W3C规范中，跨域请求分为简单请求和复杂请求。简单请求不需要发送Options嗅探请求，但是只能发送简单的get/head/post请求，且不能自定义http的<code>headers</code>。复杂请求包含<code>preflighted请求</code>和<code>preflighted认证请求</code>。复杂请求在发送真正的请求前会提前发送一次Options请求（嗅探、预检请求），<code>XHR</code>会根据返回的<code>Access-Control-*</code>等头信息判断是否有对指定站点的访问权限，检查该请求是否是可靠安全的。如果options获得的回应是拒绝性质的（或者没有权限），会停止发送实际请求信息。</p>
-<p>处理方法：</p>
-<p>一般来说这个是后台需要处理的，开放所有的或者预料中的请求方法权限。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Http</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Coding//" class="article-tag-list-link color2">Coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/22/HTTP协议-Options方法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1233,6 +1239,18 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Promise</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Async/Await</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Http</a>
               </li>
              
@@ -1278,10 +1296,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Sass</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Blog</a>
               </li>
              
               <li class="article-tag-list-item">
