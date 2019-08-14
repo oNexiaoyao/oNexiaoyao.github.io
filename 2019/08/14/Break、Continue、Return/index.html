@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/8 | 一只小妖</title>
+  <title>Break、Continue、Return | 一只小妖</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="就想安静的装个*">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一只小妖">
-<meta property="og:url" content="http://yoursite.com/archives/2019/08/index.html">
+  <meta name="description" content="Break　　Break 语句会使运行的程序立刻退出包含在最内层的循环或者退出一个 switch 语句。由于它是用来退出循环或者 switch 语句，所以只有当它出现在这些语句时，这种形式的 break 语句才是合法的。 12345678for (var i = 1; i &amp;lt; 10; i++) &amp;#123;    if (i == 6) &amp;#123;        break;    &amp;#1">
+<meta name="keywords" content="JavaScript,基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Break、Continue、Return">
+<meta property="og:url" content="http://yoursite.com/2019/08/14/Break、Continue、Return/index.html">
 <meta property="og:site_name" content="一只小妖">
-<meta property="og:description" content="就想安静的装个*">
+<meta property="og:description" content="Break　　Break 语句会使运行的程序立刻退出包含在最内层的循环或者退出一个 switch 语句。由于它是用来退出循环或者 switch 语句，所以只有当它出现在这些语句时，这种形式的 break 语句才是合法的。 12345678for (var i = 1; i &amp;lt; 10; i++) &amp;#123;    if (i == 6) &amp;#123;        break;    &amp;#1">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-08-14T01:23:21.700Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一只小妖">
-<meta name="twitter:description" content="就想安静的装个*">
+<meta name="twitter:title" content="Break、Continue、Return">
+<meta name="twitter:description" content="Break　　Break 语句会使运行的程序立刻退出包含在最内层的循环或者退出一个 switch 语句。由于它是用来退出循环或者 switch 语句，所以只有当它出现在这些语句时，这种形式的 break 语句才是合法的。 12345678for (var i = 1; i &amp;lt; 10; i++) &amp;#123;    if (i == 6) &amp;#123;        break;    &amp;#1">
   
     <link rel="alternative" href="/atom.xml" title="一只小妖" type="application/atom+xml">
   
@@ -159,36 +161,74 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Break、Continue、Return" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Break、Continue、Return
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/14/Break、Continue、Return/" class="archive-article-date">
+
+        
+        <a href="/2019/08/14/Break、Continue、Return/" class="archive-article-date">
   	<time datetime="2019-08-14T01:22:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-14</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/14/Break、Continue、Return/">Break、Continue、Return</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Break"><a href="#Break" class="headerlink" title="Break"></a>Break</h3><p>　　Break 语句会使运行的程序立刻退出包含在最内层的循环或者退出一个 switch 语句。由于它是用来退出循环或者 switch 语句，所以只有当它出现在这些语句时，这种形式的 break 语句才是合法的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">6</span>) &#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出结果 1 2 3 4 5 </span></span><br><span class="line"><span class="comment">// 当 i = 6 时，直接退出当前的这个 for 循环。这个循环将不再被执行，直接进入下一个语句。</span></span><br></pre></td></tr></table></figure>
+<h3 id="Continue"><a href="#Continue" class="headerlink" title="Continue"></a>Continue</h3><p>　　Continue 语句和 Break 语句相似。不同的是，它不是退出一个循环，而是开始循环的一次新迭代。</p>
+<p>　　Continue 语句只能用在 while 语句、do/while语句、for语句、或者for/in语句的循环体内，在其他地方使用都会引起错误！</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">6</span>) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出结果 1 2 3 4 5 7 8 9</span></span><br><span class="line"><span class="comment">// 当 i = 6 时，直接跳出本次 for 循环。继续下一次的循环执行。</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="Return"><a href="#Return" class="headerlink" title="Return"></a>Return</h3><p>　　Return 语句就是用于指定函数返回的值。Return 语句只能出现在函数体内，出现在代码中的其他任何地方都会造成语法错误！</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">6</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 控制台显示：Uncaught SyntaxError: Illegal return statement</span></span><br></pre></td></tr></table></figure>
+<p>返回控制与函数结果</p>
+<blockquote>
+<p>return [[expression]];</p>
+</blockquote>
+<p>表达式的值会被返回。如果忽略，则返回 <code>undefined</code>。</p>
+<p>当在函数体中使用 <code>return</code>语句时，函数将会停止执行。如果指定一个值，则这个值返回给函数调用者。例如，以下函数返回其参数 <code>x</code> 的平方，其中 <code>x</code> 是数字。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">square</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> demo = square(<span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(demo);</span><br><span class="line"><span class="comment">// 输出结果： 9</span></span><br></pre></td></tr></table></figure>
+<p>下面的 return语句都会终止函数的执行：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span>; <span class="comment">// 终止处理，并交出当前函数的控制权</span></span><br><span class="line"><span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">// 终止处理，并交出当前函数的控制权，返回正常的处理结果</span></span><br><span class="line"><span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// 终止处理，并交出当前函数的控制权，返回错误的处理结果，阻止提交表单，阻止执行默认的行为</span></span><br><span class="line"><span class="keyword">return</span> x;</span><br><span class="line"><span class="keyword">return</span> x + y / <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+<p>当代码执行到 return 语句时，即使函数主体后面还有其他语句，函数执行也会停止。</p>
+<p><strong>return 只在当前函数有效，不会影响其他外部函数的执行。</strong></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -204,7 +244,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -217,70 +257,104 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/14/Break、Continue、Return/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/14/你不知道的JavaScript（上）/" class="archive-article-date">
-  	<time datetime="2019-08-14T01:12:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-14</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/14/你不知道的JavaScript（上）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">你不知道的JavaScript（上）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/14/你不知道的JavaScript（上）/">你不知道的JavaScript（上）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Coding//" class="article-tag-list-link color2">Coding</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -304,8 +378,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
